@@ -1,8 +1,3 @@
-:root {
-  --color-primary: #f5f3ef;
-  --color-secondary: red;
-}
-
 body {
-  background-color: #f5f3ef;
+  font-family: --var(--font-family-base);
 }
