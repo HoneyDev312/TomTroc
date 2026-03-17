@@ -1,0 +1,8 @@
+:root {
+  --color-primary: #f5f3ef;
+  --color-secondary: red;
+}
+
+body {
+  background-color: #f5f3ef;
+}

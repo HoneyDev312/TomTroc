@@ -9,14 +9,16 @@ class View
      * Le titre de la page.
      */
     private string $title;
+    private string $templateCss;
 
 
     /**
      * Constructeur. 
      */
-    public function __construct($title)
+    public function __construct($title, $templateCss)
     {
         $this->title = $title;
+        $this->templateCss = $templateCss;
     }
 
     /**
@@ -33,6 +35,7 @@ class View
         // Les deux variables ci-dessous sont utilisées dans le "main.php" qui est le template principal.
         $content = $this->renderViewFromTemplate($viewPath, $params);
         $title = $this->title;
+        $templateCss = $this->templateCss;
         ob_start();
         require(MAIN_VIEW_PATH);
         echo ob_get_clean();
