@@ -11,11 +11,11 @@ require_once("./models/entities/User.php");
 class UserManager
 {
     /**
-     * Récupère un user par son login.
-     * @param string $login
+     * Récupère un user par son email.
+     * @param string $email
      * @return ?User
      */
-    public function getUserByLogin(string $email): ?User
+    public function getUserByEmail(string $email): ?User
     {
 
         $db = Database::getInstance();
