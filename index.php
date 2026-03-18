@@ -1,5 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 require_once 'config/config.php';
 require_once 'services/Utils.php';
 require_once 'controllers/BooksController.php';
@@ -31,20 +36,37 @@ try {
             break;
 
         case 'messaging':
-            $messgeController = new MessageController();
-            $messgeController->showMessaging();
+            $messageController = new MessageController();
+            $messgeComessageControllerntroller->showMessaging();
             break;
 
         case 'myAccount':
-            $messgeController = new AccountController();
-            $messgeController->showMyAccount();
+            $accountController = new AccountController();
+            $accountController->showMyAccount();
             break;
 
         case 'signin':
-            $messgeController = new AccountController();
-            $messgeController->showSignIn();
+            $accountController = new AccountController();
+            $accountController->showSignIn();
             break;
 
+        case 'connectUser':
+            $accountController = new AccountController();
+            $accountController->connectUser();
+            break;
+
+        case 'signup':
+            $accountController = new AccountController();
+            $accountController->showSignUp();
+            break;
+
+        case 'logout':
+            session_start();
+            $_SESSION = [];
+            session_destroy();
+
+            header('Location: /index.php');
+            exit;
         default:
             throw new Exception("La page demandée n'existe pas.");
     }

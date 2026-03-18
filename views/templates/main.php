@@ -57,11 +57,17 @@
                             <span>Mon compte</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/index.php?action=signin" class="link-connection flex">
-                            <span>Connexion</span>
-                        </a>
-                    </li>
+                    <?php if (!isset($_SESSION['user'])) : ?>
+                        <li>
+                            <a href="/index.php?action=signin" class="link-connection flex">
+                                <span>Connexion</span>
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="/index.php?action=logout">Déconnexion</a>
+                        </li>
+                    <?php endif ?>
                 </ul>
 
             </div>

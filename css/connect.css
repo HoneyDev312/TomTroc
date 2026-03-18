@@ -1,0 +1,62 @@
+.signin-wrapper {
+  height: calc(100dvh - var(--header-h) - var(--footer-h));
+  background-color: var(--color-bg-secondary);
+}
+
+.signin-content {
+  height: inherit;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: inherit;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 9rem;
+}
+
+.form-signin {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-56);
+}
+
+.form-signin > label {
+  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-14);
+}
+
+.form-signin > input {
+  height: 3.125rem;
+  margin-bottom: var(--space-32);
+  border-color: var(--color-border-primary);
+  border-radius: var(--radius-6);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.form-signin > button {
+  margin-bottom: var(--space-40);
+  border: none;
+}
+
+.form-signin > span {
+  font-size: var(--font-size-14);
+}
+
+.form-signin > span > a {
+  text-decoration: underline;
+}
+
+.picture-wrapper {
+  display: flex;
+  flex: 1;
+  height: inherit;
+  background-image: url("/assets/images/bookstore.jpg");
+  background-size: cover;
+  background-position: center;
+}
