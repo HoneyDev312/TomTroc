@@ -1,0 +1,65 @@
+header {
+  width: 100%;
+}
+
+nav {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-16) 10rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin-right: var(--space-32);
+}
+
+.logo-wrapper {
+  width: 3.1875rem;
+  height: 3.1875rem;
+  background-color: var(--color-brand-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-8);
+}
+
+.logo-text {
+  font-family: var(--font-family-brand);
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-20);
+  font-weight: 600;
+}
+
+.link-wrapper {
+  gap: var(--space-48);
+  margin-left: var(--space-48);
+}
+
+.account-wrapper {
+  margin-left: auto;
+  gap: 3.625rem;
+  border-left-width: 0.16rem;
+  border-left-color: var(--color-border-secondary);
+  border-left-style: solid;
+  padding-left: 3.625rem;
+}
+
+.link-message {
+  gap: var(--space-4);
+}
+
+.link-account {
+  gap: var(--space-4);
+}
+
+.message-counter {
+  width: 0.625rem;
+  height: 1rem;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-tertiary);
+  border-radius: 0.42rem;
+  font-size: var(--font-size-8);
+  font-weight: 700;
+  justify-content: center;
+}

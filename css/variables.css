@@ -2,10 +2,12 @@
   /* Colors */
   --color-bg-primary: #f5f3ef;
   --color-bg-secondary: #ffffff;
+  --color-bg-dark: #292929;
   --color-text-primary: #292929;
   --color-text-secondary: #a6a6a6;
   --color-text-tertiary: #ffffff;
-  --color-border: #f0f0f0;
+  --color-border-primary: #f0f0f0;
+  --color-border-secondary: #a6a6a6;
 
   --color-brand-primary: #00ac66;
   --color-brand-secondary: #006d41;
@@ -16,6 +18,7 @@
   /* Typography */
   --font-family-base: "Inter", sans-serif;
   --font-family-brand: "Playfair", serif;
+  --font-size-8: 0.5rem;
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;
   --font-size-16: 1rem;
@@ -35,9 +38,9 @@
   --radius-6: 0.375rem;
   --radius-8: 0.5rem;
   --radius-12: 0.75rem;
-  --radius: 999px;
+  --radius-8: 0.5rem;
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
 
   /* Layout */
-  --container-max: 1400px;
+  --container-max: 1440px;
 }
