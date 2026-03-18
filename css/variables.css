@@ -1,7 +1,12 @@
 :root {
+  /* Header & Footer */
+  --header-h: 5rem;
+  --footer-h: 3.75rem;
+
   /* Colors */
   --color-bg-primary: #f5f3ef;
-  --color-bg-secondary: #ffffff;
+  --color-bg-secondary: #faf9f7;
+  --color-bg-light: #ffffff;
   --color-bg-dark: #292929;
   --color-text-primary: #292929;
   --color-text-secondary: #a6a6a6;
@@ -17,12 +22,19 @@
 
   /* Typography */
   --font-family-base: "Inter", sans-serif;
-  --font-family-brand: "Playfair", serif;
+  --font-family-brand: "Playfair Display", serif;
   --font-size-8: 0.5rem;
+  --font-size-10: 0.625rem;
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;
   --font-size-16: 1rem;
   --font-size-20: 1.25rem;
+  --font-size-h1: 2.25rem;
+  --font-size-h2: 2rem;
+  --bold: 700;
+  --semibold: 600;
+  --regular: 400;
+  --light: 300;
 
   /* 8-pt spacing scale */
   --space-4: 0.25rem;
@@ -33,12 +45,13 @@
   --space-32: 2rem;
   --space-40: 2.5rem;
   --space-48: 3rem;
+  --space-56: 3.5rem;
 
   /* Radius / shadow */
   --radius-6: 0.375rem;
   --radius-8: 0.5rem;
   --radius-12: 0.75rem;
-  --radius-8: 0.5rem;
+  --radius-pill: 999px;
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
 
   /* Layout */

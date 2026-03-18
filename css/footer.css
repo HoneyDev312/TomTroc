@@ -1,0 +1,16 @@
+.footer-wrapper {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--color-bg-light);
+  justify-content: flex-end;
+  align-content: center;
+  height: var(--footer-h);
+  width: 100%;
+  gap: var(--space-40);
+  padding: 0 var(--space-48);
+}
+
+.footer-wrapper > li {
+  font-size: var(--font-size-12);
+  font-weight: var(--light);
+}

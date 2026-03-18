@@ -1,7 +1,23 @@
 body {
-  font-family: --var(--font-family-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--regular);
 }
 
+/* HEADING */
+
+h1 {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-h1);
+  font-weight: var(--regular);
+}
+
+h2 {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-h2);
+  font-weight: var(--regular);
+}
+
+/* WRAPPER */
 .flex {
   display: flex;
   align-items: center;
@@ -11,6 +27,70 @@ body {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+/* BUTTON */
+
+.btn {
+  border-radius: var(--radius-12);
+  font-size: var(--font-size-16);
+  font-weight: var(--semibold);
+  padding: var(--space-24) var(--space-40);
+}
+
+.btn-filled {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-tertiary);
+}
+
+.btn-outlined {
+  background-color: transparent;
+  color: var(--color-brand-primary);
+  border-width: 1px;
+  border-color: var(--color-brand-primary);
+  border-style: solid;
+}
+
+/* CARD */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-bg-light);
+  border-bottom-left-radius: var(--radius-12);
+  border-bottom-right-radius: var(--radius-12);
+  padding-bottom: var(--space-24);
+}
+
+.card-img {
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
+.card-description {
+  padding: 0 var(--space-16);
+}
+
+.card-title {
+  font-size: var(--font-size-16);
+  font-weight: var(--regular);
+  margin-top: var(--space-16);
+}
+
+.card-author {
+  font-size: var(--font-size-14);
+  font-weight: var(--regular);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-8);
+}
+
+.card-owner {
+  font-size: var(--font-size-10);
+  font-weight: var(--regular);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-24);
 }
 
 @media (min-width: 768px) {

@@ -1,10 +1,13 @@
 header {
   width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 nav {
+  height: var(--header-h);
+  align-content: center;
   background-color: var(--color-bg-primary);
-  padding: var(--space-16) 10rem;
 }
 
 .logo-link {
@@ -28,7 +31,7 @@ nav {
   font-family: var(--font-family-brand);
   color: var(--color-brand-primary);
   font-size: var(--font-size-20);
-  font-weight: 600;
+  font-weight: var(--semibold);
 }
 
 .link-wrapper {
@@ -60,6 +63,6 @@ nav {
   color: var(--color-text-tertiary);
   border-radius: 0.42rem;
   font-size: var(--font-size-8);
-  font-weight: 700;
+  font-weight: var(--bold);
   justify-content: center;
 }
