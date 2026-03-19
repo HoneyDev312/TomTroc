@@ -27,4 +27,23 @@ class UserManager
         }
         return null;
     }
+
+    /**
+     * Ajoute un user.
+     * @param User $user : l'user à ajouter.
+     * @return void
+     */
+    public function addUser(User $user): void
+    {
+        $db = Database::getInstance();
+        $sql = "INSERT INTO user ( username, email, password) VALUES (:username, :email, :password)";
+
+        $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+
+        $db->query($sql, [
+            'username' => $user->getUsername(),
+            'email' => $user->getEmail(),
+            'password' => $hashedPassword
+        ]);
+    }
 }

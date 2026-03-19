@@ -34,19 +34,17 @@ class AccountController
     public function connectUser(): void
     {
         // On récupère les données du formulaire.
-        $login = Utils::request("email");
+        $email = Utils::request("email");
         $password = Utils::request("password");
 
-        var_dump($login,  $password);
-
         // On vérifie que les données sont valides.
-        if (empty($login) || empty($password)) {
+        if (empty($email) || empty($password)) {
             throw new Exception("Tous les champs sont obligatoires. 1");
         }
 
         // On vérifie que l'utilisateur existe.
         $userManager = new UserManager();
-        $user = $userManager->getUserByLogin($login);
+        $user = $userManager->getUserByEmail($email);
         if (!$user) {
             throw new Exception("L'utilisateur demandé n'existe pas.");
         }
@@ -73,5 +71,41 @@ class AccountController
     {
         $view = new View("Inscription", "connect");
         $view->render("signup");
+    }
+
+    /**
+     * Enregitrement d'un utilisateur.
+     * @return void
+     */
+    public function addUser(): void
+    {
+        // On récupère les données du formulaire.
+        $username = Utils::request("username");
+        $email = Utils::request("email");
+        $password = Utils::request("password");
+
+        // On vérifie que les données sont valides.
+        if (empty($username) || empty($email) || empty($password)) {
+            throw new Exception("Tous les champs sont obligatoires. 1");
+        }
+
+        // On crée l'objet Comment.
+        $user = new User([
+            'username' => $username,
+            'email' => $email,
+            'password' => $password
+        ]);
+
+        // On ajoute le commentaire.
+        $userManager = new UserManager();
+        $result = $userManager->addUser($user);
+
+        // On vérifie que l'ajout a bien fonctionné.
+        if (!$user) {
+            throw new Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
+        }
+
+        // On redirige vers la page de l'article.
+        Utils::redirect("signin");
     }
 }

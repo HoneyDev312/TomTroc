@@ -60,6 +60,11 @@ try {
             $accountController->showSignUp();
             break;
 
+        case 'addUser':
+            $accountController = new AccountController();
+            $accountController->addUser();
+            break;
+
         case 'logout':
             session_start();
             $_SESSION = [];
