@@ -91,14 +91,14 @@ namespace App\Controllers {
                 throw new \Exception("Tous les champs sont obligatoires. 1");
             }
 
-            // On crée l'objet Comment.
+            // On crée l'objet User.
             $user = new User([
                 'username' => $username,
                 'email' => $email,
                 'password' => $password
             ]);
 
-            // On ajoute le commentaire.
+            // On ajoute le user.
             $userManager = new UserManager();
             $result = $userManager->addUser($user);
 
@@ -107,7 +107,7 @@ namespace App\Controllers {
                 throw new \Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
             }
 
-            // On connecte l'utilisateur.
+            // On enregistre l'utilisateur en session.
             $_SESSION['user'] = $user;
             $_SESSION['userId'] = $user->getId();
 

@@ -3,6 +3,7 @@
 namespace App\Controllers {
 
     use App\Views\View;
+    use App\Models\Managers\BookManager;
 
     class BooksController
     {
@@ -22,8 +23,11 @@ namespace App\Controllers {
          */
         public function showOurBooks(): void
         {
+            $bookManager = new BookManager();
+            $books = $bookManager->getAllBooks();
+
             $view = new View("Nos Livres", "ourBooks");
-            $view->render("ourBooks");
+            $view->render("ourBooks", ['books' => $books]);
         }
 
         /**

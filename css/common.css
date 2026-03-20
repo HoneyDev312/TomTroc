@@ -82,7 +82,8 @@ h2 {
   font-size: var(--font-size-14);
   font-weight: var(--regular);
   color: var(--color-text-secondary);
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-16);
 }
 
 .card-owner {
@@ -90,7 +91,6 @@ h2 {
   font-weight: var(--regular);
   font-style: italic;
   color: var(--color-text-secondary);
-  margin-top: var(--space-24);
 }
 
 @media (min-width: 768px) {
