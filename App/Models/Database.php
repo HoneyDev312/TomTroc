@@ -30,7 +30,7 @@ namespace App\Models {
 
         /**
          * Méthode qui permet de récupérer l'instance de la classe DBManager.
-         * @return DBManager
+         * @return Database
          */
         public static function getInstance(): Database
         {
