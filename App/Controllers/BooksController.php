@@ -4,6 +4,7 @@ namespace App\Controllers {
 
     use App\Views\View;
     use App\Models\Managers\BookManager;
+    use App\Services\Utils;
 
     class BooksController
     {
@@ -41,6 +42,21 @@ namespace App\Controllers {
         {
             $view = new View("Nos Livres", "updateBook");
             $view->render("updateBook");
+        }
+
+        /**
+         * Affiche la page des livres.
+         * @return void
+         */
+        public function showBook(): void
+        {
+            $id = Utils::request("id", -1);
+
+            $bookManager = new BookManager();
+            $book = $bookManager->getBookById($id);
+
+            $view = new View("Nos Livres", "book");
+            $view->render("book", ['book' => $book]);
         }
     }
 }

@@ -25,14 +25,16 @@
         <h2>Les derniers livres ajoutés</h2>
         <div class="card-wrapper flex">
             <?php foreach ($books as $book): ?>
-                <div class="card">
-                    <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL . $book->getPictureUri() ?>" alt="">
-                    <div class="card-description">
-                        <p class="card-title"><?= $book->getTitle() ?></p>
-                        <p class="card-author"><?= $book->getAuthor() ?></p>
-                        <span class="card-owner">Vendu par: <?= $book->getOwnername() ?></span>
+                <a class="card-link" href="/index.php?action=book&id=<?= (int) $book->getId() ?>">
+                    <div class="card">
+                        <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL . $book->getPictureUri() ?>" alt="">
+                        <div class="card-description">
+                            <p class="card-title"><?= $book->getTitle() ?></p>
+                            <p class="card-author"><?= $book->getAuthor() ?></p>
+                            <span class="card-owner">Vendu par: <?= $book->getOwnername() ?></span>
+                        </div>
                     </div>
-                </div>
+                </a>
             <?php endforeach ?>
         </div>
         <a href="/index.php?action=ourBooks" class="btn btn-filled">

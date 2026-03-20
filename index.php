@@ -32,6 +32,11 @@ try {
             $booksController->showOurBooks();
             break;
 
+        case 'book':
+            $booksController = new BooksController();
+            $booksController->showBook();
+            break;
+
         case 'updateBook':
             $booksController = new BooksController();
             $booksController->showUpdateBook();
