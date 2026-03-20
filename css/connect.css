@@ -17,38 +17,39 @@
   margin-left: 9rem;
 }
 
-.form-signin {
+.form-connect {
   width: 20rem;
   display: flex;
   flex-direction: column;
   margin-top: var(--space-56);
 }
 
-.form-signin > label {
+.form-connect > label {
   margin-bottom: var(--space-8);
   color: var(--color-text-secondary);
   font-size: var(--font-size-14);
 }
 
-.form-signin > input {
+.form-connect > input {
   height: 3.125rem;
   margin-bottom: var(--space-32);
   border-color: var(--color-border-primary);
   border-radius: var(--radius-6);
   border-style: solid;
   border-width: 1px;
+  padding: 0 var(--space-8);
 }
 
-.form-signin > button {
+.form-connect > button {
   margin-bottom: var(--space-40);
   border: none;
 }
 
-.form-signin > span {
+.form-connect > span {
   font-size: var(--font-size-14);
 }
 
-.form-signin > span > a {
+.form-connect > span > a {
   text-decoration: underline;
 }
 

@@ -2,7 +2,7 @@
     <div class="signin-content container flex">
         <div class="form-wrapper">
             <h1>Connexion</h1>
-            <form class="form-signin" action="/index.php?action=connectUser" method="post">
+            <form class="form-connect" action="/index.php?action=connectUser" method="post">
                 <label for="email">Adresse email</label>
                 <input type="email" name="email" id="email" required>
                 <label for="password">Mot de passe</label>
