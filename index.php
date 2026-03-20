@@ -6,10 +6,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 require_once 'config/config.php';
-require_once 'services/Utils.php';
-require_once 'controllers/BooksController.php';
-require_once 'controllers/MessageController.php';
-require_once 'controllers/AccountController.php';
+require_once 'config/autoloader.php';
+
+use App\Services\Utils;
+use App\Controllers\BooksController;
+use App\Controllers\AccountController;
+use App\Controllers\MessageController;
 
 // On récupère l'action demandée par l'utilisateur.
 // Si aucune action n'est demandée, on affiche la page d'accueil.
@@ -37,7 +39,7 @@ try {
 
         case 'messaging':
             $messageController = new MessageController();
-            $messgeComessageControllerntroller->showMessaging();
+            $messageController->showMessaging();
             break;
 
         case 'myAccount':
