@@ -24,38 +24,16 @@
     <div class="books-wrapper container flex">
         <h2>Les derniers livres ajoutés</h2>
         <div class="card-wrapper flex">
-            <div class="card">
-                <img class="card-img" src="/assets/images/esther.jpg" alt="">
-                <div class="card-description">
-                    <p class="card-title"> Esther</p>
-                    <p class="card-author">Alabaster</p>
-                    <span class="card-owner">Vendu par: Toto</span>
+            <?php foreach ($books as $book): ?>
+                <div class="card">
+                    <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL . $book->getPictureUri() ?>" alt="">
+                    <div class="card-description">
+                        <p class="card-title"><?= $book->getTitle() ?></p>
+                        <p class="card-author"><?= $book->getAuthor() ?></p>
+                        <span class="card-owner">Vendu par: <?= $book->getOwnername() ?></span>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="/assets/images/esther.jpg" alt="">
-                <div class="card-description">
-                    <p class="card-title"> Esther</p>
-                    <p class="card-author">Alabaster</p>
-                    <span class="card-owner">Vendu par: Toto</span>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="/assets/images/esther.jpg" alt="">
-                <div class="card-description">
-                    <p class="card-title"> Esther</p>
-                    <p class="card-author">Alabaster</p>
-                    <span class="card-owner">Vendu par: Toto</span>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="/assets/images/esther.jpg" alt="">
-                <div class="card-description">
-                    <p class="card-title"> Esther</p>
-                    <p class="card-author">Alabaster</p>
-                    <span class="card-owner">Vendu par: Toto</span>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
         <a href="/index.php?action=ourBooks" class="btn btn-filled">
             Voir tous les livres

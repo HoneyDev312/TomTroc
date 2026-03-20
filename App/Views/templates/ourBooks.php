@@ -2,7 +2,7 @@
     <div class="ourBooks-content container">
         <div class="ourBooks-header">
             <h1>Nos livres à l'échange</h1>
-            <input class="search" type="text" name="search" id="search" placeholder="Rechercher un livre">
+            <input class="ourBooks-search " type="text" name="search" id="search" placeholder="Rechercher un livre">
         </div>
         <div class="ourBooks-grid">
             <?php foreach ($books as $book): ?>

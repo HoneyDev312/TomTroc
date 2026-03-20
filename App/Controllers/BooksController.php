@@ -13,8 +13,11 @@ namespace App\Controllers {
          */
         public function showHome(): void
         {
+            $bookManager = new BookManager();
+            $books = $bookManager->getLastFourBooks();
+
             $view = new View("Accueil", "home");
-            $view->render("home");
+            $view->render("home", ['books' => $books]);
         }
 
         /**

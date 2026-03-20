@@ -44,8 +44,11 @@ section {
 }
 
 .card-wrapper {
+  width: 100%;
+  flex-wrap: wrap;
   margin: var(--space-48) 0;
-  gap: 0 var(--space-40);
+  justify-content: space-between;
+  padding: 0 calc(6 * var(--space-40));
 }
 
 .help {
