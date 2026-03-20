@@ -103,12 +103,16 @@ namespace App\Controllers {
             $result = $userManager->addUser($user);
 
             // On vérifie que l'ajout a bien fonctionné.
-            if (!$user) {
+            if (!$user || !$result) {
                 throw new \Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
             }
 
-            // On redirige vers la page de l'article.
-            Utils::redirect("signin");
+            // On connecte l'utilisateur.
+            $_SESSION['user'] = $user;
+            $_SESSION['userId'] = $user->getId();
+
+            // On redirige vers la page Home.
+            Utils::redirect("home");
         }
     }
 }

@@ -32,17 +32,19 @@ namespace App\Models\Managers {
          * @param User $user : l'user à ajouter.
          * @return void
          */
-        public function addUser(User $user): void
+        public function addUser(User $user): bool
         {
             $sql = "INSERT INTO user ( username, email, password) VALUES (:username, :email, :password)";
 
             $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
 
-            $this->db->query($sql, [
+            $statement = $this->db->query($sql, [
                 'username' => $user->getUsername(),
                 'email' => $user->getEmail(),
                 'password' => $hashedPassword
             ]);
+
+            return $statement->rowCount() > 0;
         }
     }
 }
