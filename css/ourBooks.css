@@ -19,6 +19,11 @@
   padding: 0 var(--space-40);
 }
 
+.ourBooks-search::placeholder {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-14);
+}
+
 .ourBooks-content {
   padding: calc(2 * var(--space-40)) calc(6 * var(--space-40));
 }
