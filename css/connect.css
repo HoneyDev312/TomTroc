@@ -1,9 +1,9 @@
-.signin-wrapper {
+.connect-wrapper {
   height: calc(100dvh - var(--header-h) - var(--footer-h));
   background-color: var(--color-bg-secondary);
 }
 
-.signin-content {
+.connect-content {
   height: inherit;
 }
 
@@ -53,7 +53,7 @@
   text-decoration: underline;
 }
 
-.picture-wrapper {
+.connect-picture {
   display: flex;
   flex: 1;
   height: inherit;

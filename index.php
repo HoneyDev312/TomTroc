@@ -52,6 +52,11 @@ try {
             $accountController->showMyAccount();
             break;
 
+        case 'publicAccount':
+            $accountController = new AccountController();
+            $accountController->showPublicAccount();
+            break;
+
         case 'signin':
             $accountController = new AccountController();
             $accountController->showSignIn();

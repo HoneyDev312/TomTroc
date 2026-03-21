@@ -21,7 +21,7 @@
 <body>
     <header>
         <nav aria-label="Navigation principale">
-            <div class="container flex">
+            <div class="nav-wrapper container flex">
                 <a href="/index.php" class="logo-link">
                     <div class="logo-wrapper">
                         <img src="/assets/svg/logo_white.svg" alt="Logo Tom Troc">

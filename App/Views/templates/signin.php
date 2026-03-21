@@ -1,5 +1,5 @@
-<div class="signin-wrapper">
-    <div class="signin-content container flex">
+<div class="connect-wrapper">
+    <div class="connect-content container flex">
         <div class="form-wrapper">
             <h1>Connexion</h1>
             <form class="form-connect" action="/index.php?action=connectUser" method="post">
@@ -11,6 +11,6 @@
                 <span>Pas de compte ? <a href="/index.php?action=signup">Inscrivez-vous</a></span>
             </form>
         </div>
-        <div class="picture-wrapper">
+        <div class="connect-picture">
         </div>
     </div>

@@ -10,13 +10,26 @@ namespace App\Controllers {
     class AccountController
     {
         /**
-         * Affiche la Messagerie.
+         * Affiche la page mon compte.
          * @return void
          */
         public function showMyAccount(): void
         {
             $view = new View("Mon compte", "myAccount");
             $view->render("myAccount");
+        }
+
+        /**
+         * Affiche la page publique d'un compte.
+         * @return void
+         */
+        public function showPublicAccount(): void
+        {
+            // On récupère le ownername.
+            $ownerId = Utils::request("id");
+
+            $view = new View("Compte de ???", "publicAccount");
+            $view->render("publicAccount");
         }
 
         /**

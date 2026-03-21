@@ -10,6 +10,10 @@ nav {
   background-color: var(--color-bg-primary);
 }
 
+.nav-wrapper {
+  padding: 0 calc(3 * var(--space-48));
+}
+
 .logo-link {
   display: flex;
   align-items: center;
