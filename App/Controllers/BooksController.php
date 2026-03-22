@@ -45,7 +45,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Affiche la page des livres.
+         * Affiche la page d'un livre.
          * @return void
          */
         public function showBook(): void

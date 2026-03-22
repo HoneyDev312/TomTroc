@@ -51,12 +51,14 @@
                             <span class="message-counter flex">1</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/index.php?action=myAccount" class="link-account flex">
-                            <img src="/assets/svg/account.svg" alt="">
-                            <span>Mon compte</span>
-                        </a>
-                    </li>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <li>
+                            <a href="/index.php?action=myAccount&id=<?= (int) $_SESSION['userId'] ?>" class="link-account flex">
+                                <img src="/assets/svg/account.svg" alt="">
+                                <span>Mon compte</span>
+                            </a>
+                        </li>
+                    <?php endif ?>
                     <?php if (!isset($_SESSION['user'])) : ?>
                         <li>
                             <a href="/index.php?action=signin" class="link-connection flex">

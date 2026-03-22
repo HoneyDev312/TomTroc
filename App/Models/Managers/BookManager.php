@@ -54,9 +54,9 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère tous un book par son id.
+         * Récupère un book par son id.
          * @param int : un id de livre book_id
-         * @return array : un tableau d'objets Book.
+         * @return ?Book : un objets Book ou null.
          */
         public function getBookById(int $id): ?Book
         {
@@ -72,6 +72,27 @@ namespace App\Models\Managers {
                 return new Book($book);
             }
             return null;
+        }
+
+        /**
+         * Récupère tous les book par un ownerId.
+         * @param int : un id de user owner_id
+         * @return array : un tableau d'objets Book.
+         */
+        public function getAllBookByOwnerId(int $id): array
+        {
+            $sql = "SELECT
+                    b.*, b.book_id AS id
+                    FROM book b
+                    WHERE owner_id = :id";
+
+            $result = $this->db->query($sql, ['id' => $id]);
+            $books = [];
+
+            while ($book = $result->fetch()) {
+                $books[] = new Book($book);
+            }
+            return $books;
         }
     }
 }

@@ -6,6 +6,7 @@ namespace App\Controllers {
     use App\Views\View;
     use App\Models\Managers\UserManager;
     use App\Models\Entities\User;
+    use App\Models\Managers\BookManager;
 
     class AccountController
     {
@@ -15,8 +16,17 @@ namespace App\Controllers {
          */
         public function showMyAccount(): void
         {
+            // On récupère l'id.
+            $id = Utils::request("id");
+
+            $userManager = new UserManager();
+            $user = $userManager->getPrivateUserById($id);
+
+            $bookManager = new BookManager();
+            $books = $bookManager->getAllBookByOwnerId($id);
+
             $view = new View("Mon compte", "myAccount");
-            $view->render("myAccount");
+            $view->render("publicAccount", ["user" => $user, "book" => $books]);
         }
 
         /**
@@ -25,11 +35,17 @@ namespace App\Controllers {
          */
         public function showPublicAccount(): void
         {
-            // On récupère le ownername.
-            $ownerId = Utils::request("id");
+            // On récupère l'id.
+            $id = Utils::request("id");
 
-            $view = new View("Compte de ???", "publicAccount");
-            $view->render("publicAccount");
+            $userManager = new UserManager();
+            $user = $userManager->getPublicUserById($id);
+
+            $bookManager = new BookManager();
+            $books = $bookManager->getAllBookByOwnerId($id);
+
+            $view = new View("Compte de {$user->getUsername()}", "publicAccount");
+            $view->render("publicAccount", ["user" => $user, "book" => $books]);
         }
 
         /**
