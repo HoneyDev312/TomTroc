@@ -54,10 +54,15 @@
                             <td><?= $book->getTitle() ?></td>
                             <td><?= $book->getAuthor() ?></td>
                             <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>
-                            <td><span class="my-account-books-table-image-tag <?= $book->getAvailability() ? "available" : "unavailable" ?>"><?= $book->getAvailability() ? "disponible" : "non-dispo." ?></span></td>
+                            <td>
+                                <span class="my-account-books-table-image-tag 
+                                <?= $book->getAvailability() ? "available" : "unavailable" ?>">
+                                    <?= $book->getAvailability() ? "disponible" : "non-dispo." ?>
+                                </span>
+                            </td>
                             <td class="my-account-books-table-action">
-                                <a href="#">Éditer</a>
-                                <a class="delete" href="#">Supprimer</a>
+                                <a href="/index.php?action=updateBook&id=<?= (int) $book->getId() ?>">Éditer</a>
+                                <a class="delete" href="/index.php?action=deleteBook&id=<?= (int)$book->getId() ?>&userId=<?= (int)$user->getId() ?>">Supprimer</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -94,5 +94,16 @@ namespace App\Models\Managers {
             }
             return $books;
         }
+
+        /**
+         * Supprime un book.
+         * @param int $id : l'id du book à supprimer.
+         * @return void
+         */
+        public function deleteBook(int $id): void
+        {
+            $sql = "DELETE FROM book WHERE book_id = :id";
+            $this->db->query($sql, ['id' => $id]);
+        }
     }
 }

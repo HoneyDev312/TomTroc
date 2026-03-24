@@ -42,6 +42,11 @@ try {
             $booksController->showUpdateBook();
             break;
 
+        case 'deleteBook':
+            $booksController = new BooksController();
+            $booksController->deleteBook();
+            break;
+
         case 'messaging':
             $messageController = new MessageController();
             $messageController->showMessaging();

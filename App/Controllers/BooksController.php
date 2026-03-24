@@ -58,5 +58,27 @@ namespace App\Controllers {
             $view = new View("Nos Livres", "book");
             $view->render("book", ['book' => $book]);
         }
+
+        /**
+         * Suppression d'un article.
+         * @return void
+         */
+        public function deleteBook(): void
+        {
+
+            $id = Utils::request("id", -1);
+            $userId = Utils::request("userId", -1);
+
+            if ($id <= 0) {
+                throw new \RuntimeException('Id utilisateur invalide');
+            }
+
+            // On supprime le book.
+            $bookManager = new BookManager();
+            $bookManager->deleteBook((int) $id);
+
+            // On redirige vers la page mon compte.
+            Utils::redirect("myAccount", ["id" => $userId]);
+        }
     }
 }
