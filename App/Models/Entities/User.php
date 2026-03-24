@@ -90,7 +90,7 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le createdAt.
-         * @param \DateTimeImmutable $createdAt
+         * @param string|\DateTimeImmutable $createdAt
          */
         public function setCreatedAt(string|\DateTimeImmutable $createdAt): void
         {
@@ -104,7 +104,7 @@ namespace App\Models\Entities {
 
         /**
          * Getter pour le createdAt.
-         * @return DateTimeImmutable
+         * @return string|\DateTimeImmutable
          */
         public function getCreatedAt(): \DateTimeImmutable
         {

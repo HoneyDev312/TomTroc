@@ -44,7 +44,7 @@ h2 {
 }
 
 .btn-outlined {
-  background-color: transparent;
+  background-color: var(--color-bg-primary);
   color: var(--color-brand-primary);
   border-width: 1px;
   border-color: var(--color-brand-primary);

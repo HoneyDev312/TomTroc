@@ -27,7 +27,7 @@
             <?php foreach ($books as $book): ?>
                 <a class="card-link" href="/index.php?action=book&id=<?= (int) $book->getId() ?>">
                     <div class="card">
-                        <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL . $book->getPictureUri() ?>" alt="">
+                        <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="">
                         <div class="card-description">
                             <p class="card-title"><?= $book->getTitle() ?></p>
                             <p class="card-author"><?= $book->getAuthor() ?></p>

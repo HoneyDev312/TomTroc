@@ -55,6 +55,15 @@ namespace App\Models\Entities {
             return $this->description;
         }
 
+        public function getTruncateDescription(int $max = 120): string
+        {
+            if (mb_strlen($this->description) <= $max) {
+                return $this->description;
+            }
+
+            return mb_substr($this->description, 0, $max) . '...';
+        }
+
         /**
          * Setter pour le author.
          * @param string $author

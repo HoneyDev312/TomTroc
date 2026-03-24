@@ -26,7 +26,7 @@ namespace App\Controllers {
             $books = $bookManager->getAllBookByOwnerId($id);
 
             $view = new View("Mon compte", "myAccount");
-            $view->render("publicAccount", ["user" => $user, "book" => $books]);
+            $view->render("myAccount", ["user" => $user, "books" => $books]);
         }
 
         /**
@@ -45,7 +45,7 @@ namespace App\Controllers {
             $books = $bookManager->getAllBookByOwnerId($id);
 
             $view = new View("Compte de {$user->getUsername()}", "publicAccount");
-            $view->render("publicAccount", ["user" => $user, "book" => $books]);
+            $view->render("publicAccount", ["user" => $user, "books" => $books]);
         }
 
         /**

@@ -1,0 +1,241 @@
+.my-account-wrapper {
+  min-height: calc(100dvh - var(--header-h) - var(--footer-h));
+  background-color: var(--color-bg-secondary);
+}
+
+.my-account-content {
+  flex-direction: column;
+  padding: 0 calc(3 * var(--space-48));
+  padding-bottom: 100px;
+}
+
+.my-account-content > h1 {
+  padding-top: calc(2 * var(--space-48));
+  margin-bottom: var(--space-48);
+}
+
+.my-account-informations {
+  height: 31rem;
+  width: 100%;
+  gap: var(--space-32);
+}
+
+.my-account-informations-box {
+  min-height: 100%;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-20);
+}
+
+.my-account-informations-box.left {
+  padding: var(--space-48) 0;
+}
+
+.my-account-informations-box.right {
+  padding: var(--space-32) 0;
+  justify-content: center;
+}
+
+.my-account-avatar {
+  height: 8.3rem;
+  width: 8.3rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.my-account-avatar > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.my-account-informations-box > a {
+  font-size: var(--font-size-14);
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+}
+
+.my-account-informations-separator {
+  height: 0;
+  width: 15rem;
+  border-top-color: var(--color-border-tertiary);
+  border-top-width: 1px;
+  border-top-style: solid;
+  margin: var(--space-48) 0;
+}
+
+.my-account-informations-since {
+  font-size: var(--font-size-14);
+  color: var(--color-text-secondary);
+}
+
+.my-account-informations-subtitle {
+  font-size: var(--font-size-8);
+  font-weight: var(--semibold);
+  margin-top: var(--space-24);
+  letter-spacing: 8%;
+}
+
+.my-account-informations-username {
+  font-size: var(--font-size-24);
+  font-family: var(--font-family-brand);
+}
+
+.my-account-informations-count {
+  font-size: var(--font-size-14);
+  gap: var(--space-8);
+}
+
+.my-account-informations-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-account-informations-title {
+  align-self: flex-start;
+  margin-bottom: var(--space-24);
+}
+
+.my-account-informations-form-connect {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-account-informations-form-connect > label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-14);
+}
+
+.my-account-informations-form-connect > input {
+  height: 3.125rem;
+  border-radius: var(--radius-6);
+  background-color: var(--color-input-primary);
+  padding: 0 var(--space-8);
+  border: none;
+  margin-bottom: var(--space-16);
+  font-size: var(--font-size-14);
+  padding-left: var(--space-16);
+}
+
+.my-account-informations-form-connect > input::placeholder {
+  font-size: var(--font-size-14);
+  color: var(--color-text-primary);
+}
+
+.my-account-informations-form-connect > button {
+  width: 50%;
+}
+
+.my-account-books {
+  margin-top: var(--space-32);
+  min-height: 100%;
+  flex-direction: column;
+  flex: 1;
+}
+
+.my-account-books-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+}
+
+thead th:first-child {
+  border-top-left-radius: var(--radius-20);
+}
+
+thead th:last-child {
+  border-top-right-radius: var(--radius-20);
+}
+
+thead th {
+  text-align: start;
+  font-size: var(--font-size-8);
+  letter-spacing: 8%;
+  font-weight: var(--semibold);
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-8);
+  background-color: var(--color-bg-light);
+}
+
+thead th:last-of-type {
+  text-align: start;
+  font-size: var(--font-size-8);
+  letter-spacing: 8%;
+  font-weight: var(--semibold);
+}
+
+tbody tr {
+  font-size: var(--font-size-12);
+}
+
+tbody tr:last-child td {
+  font-size: var(--font-size-12);
+  border-bottom: none;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-light);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg-tertiary);
+}
+
+tbody td {
+  padding: var(--space-24) 0;
+}
+
+tbody td:last-child {
+  padding: var(--space-16) 0;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--radius-20);
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--radius-20);
+}
+
+.my-account-books-table-image {
+  padding-left: calc(2 * var(--space-32));
+}
+
+.my-account-books-table-desc {
+  padding-right: var(--space-32);
+  font-style: italic;
+}
+.my-account-books-table-image-tag {
+  border-radius: var(--radius-pill);
+  color: var(--color-text-tertiary);
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-size-8);
+  font-weight: var(--semibold);
+}
+
+.my-account-books-table-image-tag.available {
+  background-color: var(--color-brand-tertiary);
+}
+
+.my-account-books-table-image-tag.unavailable {
+  background-color: var(--color-danger);
+}
+
+.my-account-books-table-action {
+  padding-right: calc(2 * var(--space-32));
+}
+
+.my-account-books-table-action > a {
+  text-decoration: underline;
+}
+
+.my-account-books-table-action > a.delete {
+  color: var(--color-danger);
+  margin-left: var(--space-8);
+}
