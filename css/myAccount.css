@@ -76,7 +76,7 @@
   font-size: var(--font-size-8);
   font-weight: var(--semibold);
   margin-top: var(--space-24);
-  letter-spacing: 8%;
+  letter-spacing: 0.08em;
 }
 
 .my-account-informations-username {
@@ -156,7 +156,7 @@ thead th:last-child {
 thead th {
   text-align: start;
   font-size: var(--font-size-8);
-  letter-spacing: 8%;
+  letter-spacing: 0.08em;
   font-weight: var(--semibold);
   padding-top: var(--space-32);
   padding-bottom: var(--space-8);
@@ -166,7 +166,7 @@ thead th {
 thead th:last-of-type {
   text-align: start;
   font-size: var(--font-size-8);
-  letter-spacing: 8%;
+  letter-spacing: 0.08em;
   font-weight: var(--semibold);
 }
 

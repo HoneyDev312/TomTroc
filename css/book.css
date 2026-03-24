@@ -55,7 +55,7 @@
 .book-subtitle {
   font-size: var(--font-size-8);
   font-weight: var(--semibold);
-  letter-spacing: 8%;
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-16);
 }
 
