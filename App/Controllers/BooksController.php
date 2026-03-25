@@ -39,27 +39,31 @@ namespace App\Controllers {
          * Affiche la page de mise à jour d'un livre.
          * @return void
          */
-        public function showEditBook(): void
+        public function showEditBook(string $id): void
         {
-            $id = Utils::request("id", -1);
+            $bookId = $id;
 
             $bookManager = new BookManager();
-            $book = $bookManager->getBookById($id);
+            $book = $bookManager->getBookById($bookId);
 
             $view = new View("Modifier un livre", "editBook");
             $view->render("editBook", ['book' => $book]);
         }
 
-        /**
-         * Affiche la page d'un livre.
-         * @return void
-         */
-        public function showBook(): void
+        public function showBook(string $id): void
         {
-            $id = Utils::request("id", -1);
+            $bookId = (int) $id;
+
+            if ($bookId <= 0) {
+                throw new \RuntimeException('ID livre invalide');
+            }
 
             $bookManager = new BookManager();
-            $book = $bookManager->getBookById($id);
+            $book = $bookManager->getBookById($bookId);
+
+            if ($book === null) {
+                throw new \RuntimeException('Livre introuvable');
+            }
 
             $view = new View("Nos Livres", "book");
             $view->render("book", ['book' => $book]);
@@ -100,29 +104,29 @@ namespace App\Controllers {
 
             // On redirige vers la page d'administration.
             // On redirige vers la page mon compte.
-            Utils::redirect("myAccount", ["id" => (int) $userId]);
+            Utils::redirect("my-account.show", ["id" => (int) $userId]);
         }
 
         /**
          * Suppression d'un article.
          * @return void
          */
-        public function deleteBook(): void
+        public function deleteBook(string $book_id, string $user_id): void
         {
 
-            $id = Utils::request("id");
-            $userId = Utils::request("userId");
+            $bookId = $book_id;
+            $userId = $user_id;
 
-            if ($id <= 0) {
+            if ($bookId <= 0) {
                 throw new \RuntimeException('Id utilisateur invalide');
             }
 
             // On supprime le book.
             $bookManager = new BookManager();
-            $bookManager->deleteBook((int) $id);
+            $bookManager->deleteBook((int) $bookId);
 
             // On redirige vers la page mon compte.
-            Utils::redirect("myAccount", ["id" => $userId]);
+            Utils::redirect("my-account.show", ["id" => $userId]);
         }
     }
 }

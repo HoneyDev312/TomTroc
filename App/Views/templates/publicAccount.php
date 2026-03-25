@@ -14,7 +14,7 @@
                         src="<?= BOOK_IMAGE_BASE_URL_SVG . "books.svg" ?>" alt="" />
                     <?= count($books) ?> livres
                 </span>
-                <a href="/index.php?action=messaging" class="btn btn-outlined">Écrire un message</a>
+                <a href="/messaging/<?= $user->getId() ?>" class="btn btn-outlined">Écrire un message</a>
             </div>
             <div class="my-account-informations-box flex right">
 

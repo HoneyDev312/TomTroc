@@ -87,7 +87,7 @@ namespace App\Models\Managers {
          * @param User $user : l'user à ajouter.
          * @return void
          */
-        public function addUser(User $user): bool
+        public function addUser(User $user): ?int
         {
             $sql = "INSERT INTO user ( username, email, password) VALUES (:username, :email, :password)";
 
@@ -97,7 +97,10 @@ namespace App\Models\Managers {
                 'password' => $user->getPassword()
             ]);
 
-            return $statement->rowCount() > 0;
+            if ($statement->rowCount() > 0) {
+                return (int) $this->db->getPDO()->lastInsertId();
+            }
+            return null;
         }
     }
 }

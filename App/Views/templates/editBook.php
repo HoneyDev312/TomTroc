@@ -13,7 +13,9 @@
                 </div>
             </div>
             <div class="update-book-form-wrapper flex">
-                <form class="update-book-form" action="/index.php?action=updateBook&id=<?= $book->getId() ?>&userId=<?= $book->getOwnerId() ?>" method="post">
+                <form class="update-book-form" action="/update-book" method="post">
+                    <input type="text" name="id" id="id" value="<?= $book->getId() ?>" hidden>
+                    <input type="text" name="userId" id="userId" value="<?= $book->getOwnerId() ?>" hidden>
                     <label for="title">Titre</label>
                     <input type="text" name="title" id="title" value="<?= $book->getTitle() ?>">
                     <label for="author">Auteur</label>

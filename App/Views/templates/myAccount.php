@@ -7,7 +7,7 @@
                     <img
                         src="<?= BOOK_IMAGE_BASE_URL_USERS . strtolower($user->getUsername()) . ".jpg" ?>" alt="" />
                 </div>
-                <a href="/index.php">modifier</a>
+                <a href="/">modifier</a>
                 <div class="my-account-informations-separator"></div>
                 <p class="my-account-informations-username"><?= $user->getUsername() ?></p>
                 <p class="my-account-informations-since">Membre depuis le <?= $user->getCreatedAt()->format('d/m/Y') ?></p>
@@ -21,9 +21,10 @@
             <div class="my-account-informations-box flex right">
                 <div class="my-account-informations-form">
                     <p class="my-account-informations-title">Vos informations personnelles</p>
-                    <form class="my-account-informations-form-connect" action="/index.php?action=updateMyAccount&id=<?= $user->getId() ?>" method="post">
+                    <form class="my-account-informations-form-connect" action="/update-my-account" method="post">
 
-                        <label for="email">Adresse email</label>
+                        <input type="text" name="id" id="id" value="<?= $user->getId() ?>" hidden>
+                        <label for=" email">Adresse email</label>
                         <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>">
                         <label for="password">Mot de passe</label>
                         <input type="hidden" name="old_password" id="old_password" value="<?= $user->getPassword() ?>" />
@@ -62,8 +63,8 @@
                                 </span>
                             </td>
                             <td class="my-account-books-table-action">
-                                <a href="/index.php?action=editBook&id=<?= (int) $book->getId() ?>">Éditer</a>
-                                <a class="delete" href="/index.php?action=deleteBook&id=<?= (int)$book->getId() ?>&userId=<?= (int)$user->getId() ?>">Supprimer</a>
+                                <a href="/edit-book/<?= (int) $book->getId() ?>">Éditer</a>
+                                <a class="delete" href="/delete-book/<?= (int)$book->getId() ?>/<?= (int)$user->getId() ?>">Supprimer</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

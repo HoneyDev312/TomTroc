@@ -1,6 +1,6 @@
 <div class="book-header">
     <div class="container">
-        <a href="/index.php?action=ourBooks">Nos livres</a> > <span><?= $book->getTitle() ?></span>
+        <a href="/our-books">Nos livres</a> > <span><?= $book->getTitle() ?></span>
     </div>
 </div>
 <div class="book-wrapper">
@@ -18,11 +18,11 @@
             <p class="book-description"><?= $book->getDescription() ?></p>
             <div class="separator"></div>
             <p class="book-subtitle">PROPRIÉTAIRE</p>
-            <a href="/index.php?action=publicAccount&id=<?= $book->getOwnerId() ?>" class="owner-wrapper flex">
+            <a href="/public-account/<?= $book->getOwnerId() ?>" class="owner-wrapper flex">
                 <div class="owner-picture"></div>
                 <p><?= $book->getOwnername() ?></p>
             </a>
-            <a href="/index.php?action=messaging&id=<?= $book->getOwnerId() ?>" class="btn btn-filled">
+            <a href="/messaging/<?= $book->getOwnerId() ?>" class="btn btn-filled">
                 Envoyer un message
             </a>
         </div>

@@ -14,16 +14,20 @@ namespace App\Controllers {
          * Affiche la page mon compte.
          * @return void
          */
-        public function showMyAccount(): void
+        public function showMyAccount(string $id): void
         {
             // On récupère l'id.
-            $id = Utils::request("id");
+            $userId = (int) $id;
+
+            if ($userId <= 0) {
+                throw new \RuntimeException('ID livre invalide');
+            }
 
             $userManager = new UserManager();
-            $user = $userManager->getPrivateUserById($id);
+            $user = $userManager->getPrivateUserById($userId);
 
             $bookManager = new BookManager();
-            $books = $bookManager->getAllBookByOwnerId($id);
+            $books = $bookManager->getAllBookByOwnerId($userId);
 
             $view = new View("Mon compte", "myAccount");
             $view->render("myAccount", ["user" => $user, "books" => $books]);
@@ -33,16 +37,20 @@ namespace App\Controllers {
          * Affiche la page publique d'un compte.
          * @return void
          */
-        public function showPublicAccount(): void
+        public function showPublicAccount(string $id): void
         {
             // On récupère l'id.
-            $id = Utils::request("id");
+            $userId = (int) $id;
+
+            if ($userId <= 0) {
+                throw new \RuntimeException('ID livre invalide');
+            }
 
             $userManager = new UserManager();
-            $user = $userManager->getPublicUserById($id);
+            $user = $userManager->getPublicUserById($userId);
 
             $bookManager = new BookManager();
-            $books = $bookManager->getAllBookByOwnerId($id);
+            $books = $bookManager->getAllBookByOwnerId($userId);
 
             $view = new View("Compte de {$user->getUsername()}", "publicAccount");
             $view->render("publicAccount", ["user" => $user, "books" => $books]);
@@ -145,7 +153,7 @@ namespace App\Controllers {
 
             // On redirige vers la page d'administration.
             // On redirige vers la page mon compte.
-            Utils::redirect("myAccount", ["id" => (int) $id]);
+            Utils::redirect("my-account.show", ["id" => (int) $id]);
         }
 
         /**
@@ -166,7 +174,6 @@ namespace App\Controllers {
 
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-
             // On crée l'objet User.
             $user = new User([
                 'username' => $username,
@@ -176,19 +183,33 @@ namespace App\Controllers {
 
             // On ajoute le user.
             $userManager = new UserManager();
-            $result = $userManager->addUser($user);
+            $userId = $userManager->addUser($user);
 
             // On vérifie que l'ajout a bien fonctionné.
-            if (!$user || !$result) {
+            if (!$user || !$userId) {
                 throw new \Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
             }
 
             // On enregistre l'utilisateur en session.
             $_SESSION['user'] = $user;
-            $_SESSION['userId'] = $user->getId();
+            $_SESSION['userId'] = $userId;
 
             // On redirige vers la page Home.
             Utils::redirect("home");
+        }
+
+        /**
+         * Enregitrement d'un utilisateur.
+         * @return void
+         */
+        public function logoutUser(): void
+        {
+            if (session_status() === PHP_SESSION_ACTIVE) {
+                $_SESSION = [];
+                session_destroy();
+            }
+
+            Utils::redirect('home');
         }
     }
 }

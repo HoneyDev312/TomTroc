@@ -5,7 +5,7 @@
         <div class="left-content flex">
             <h1>Rejoignez nos<br>lecteurs passionnés</h1>
             <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons en la magie du partage de connaissances et d'histoires à<br>travers les livres. </p>
-            <a href="/index.php?action=ourBooks" class="btn btn-filled">
+            <a href="/our-books" class="btn btn-filled">
                 Découvrir
             </a>
         </div>
@@ -25,7 +25,7 @@
         <h2>Les derniers livres ajoutés</h2>
         <div class="card-wrapper flex">
             <?php foreach ($books as $book): ?>
-                <a class="card-link" href="/index.php?action=book&id=<?= (int) $book->getId() ?>">
+                <a class="card-link" href="/book/<?= (int)$book->getId() ?>">
                     <div class="card">
                         <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="">
                         <div class="card-description">
@@ -37,7 +37,7 @@
                 </a>
             <?php endforeach ?>
         </div>
-        <a href="/index.php?action=ourBooks" class="btn btn-filled">
+        <a href="/our-books" class="btn btn-filled">
             Voir tous les livres
         </a>
     </div>
@@ -64,7 +64,7 @@
                 <p>Proposez un échange et discutez avec d'autres passionnés de lecture.</p>
             </div>
         </div>
-        <a href="/" class="btn btn-outlined">
+        <a href="/our-books" class="btn btn-outlined">
             Voir tous les livres
         </a>
     </div>
