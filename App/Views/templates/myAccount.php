@@ -21,12 +21,13 @@
             <div class="my-account-informations-box flex right">
                 <div class="my-account-informations-form">
                     <p class="my-account-informations-title">Vos informations personnelles</p>
-                    <form class="my-account-informations-form-connect" action="/index.php?action=addUser" method="post">
+                    <form class="my-account-informations-form-connect" action="/index.php?action=updateMyAccount&id=<?= $user->getId() ?>" method="post">
 
                         <label for="email">Adresse email</label>
                         <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>">
                         <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" required>
+                        <input type="hidden" name="old_password" id="old_password" value="<?= $user->getPassword() ?>" />
+                        <input type="password" name="password" id="password" placeholder="••••••••">
                         <label for="username">Pseudo</label>
                         <input type="text" name="username" id="username" value="<?= $user->getUsername() ?>" required>
                         <button class="submit btn btn-outlined">Enregistrer</button>
@@ -61,7 +62,7 @@
                                 </span>
                             </td>
                             <td class="my-account-books-table-action">
-                                <a href="/index.php?action=updateBook&id=<?= (int) $book->getId() ?>">Éditer</a>
+                                <a href="/index.php?action=editBook&id=<?= (int) $book->getId() ?>">Éditer</a>
                                 <a class="delete" href="/index.php?action=deleteBook&id=<?= (int)$book->getId() ?>&userId=<?= (int)$user->getId() ?>">Supprimer</a>
                             </td>
                         </tr>

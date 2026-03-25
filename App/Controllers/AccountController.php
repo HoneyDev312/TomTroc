@@ -105,6 +105,50 @@ namespace App\Controllers {
         }
 
         /**
+         * Modification d'un User. 
+         * @return void
+         */
+        public function updateMyAccount(): void
+        {
+
+            // On récupère les données du formulaire.
+            $id = Utils::request("id");
+            $email = Utils::request("email");
+            $oldPassword = Utils::request("old_password");
+            $newPassword = Utils::request("password");
+            $username = Utils::request("username");
+
+            // On vérifie que les données sont valides.
+            if (empty($email) || empty($username)) {
+                throw new \Exception("Tous les champs sont obligatoires.");
+            }
+
+            $password = '';
+            if ($newPassword !== '') {
+                $password = password_hash($newPassword, PASSWORD_DEFAULT);
+            } else {
+                $password = $oldPassword;
+            }
+
+            // On crée l'objet User.
+            $user = new User([
+                'id' => $id,
+                'email' => $email,
+                'password' => $password,
+                'old_password' => $oldPassword,
+                'username' => $username,
+            ]);
+
+            // On met à jour le user.
+            $userManager = new UserManager();
+            $userManager->updateMyAccount($user);
+
+            // On redirige vers la page d'administration.
+            // On redirige vers la page mon compte.
+            Utils::redirect("myAccount", ["id" => (int) $id]);
+        }
+
+        /**
          * Enregitrement d'un utilisateur.
          * @return void
          */
@@ -117,14 +161,17 @@ namespace App\Controllers {
 
             // On vérifie que les données sont valides.
             if (empty($username) || empty($email) || empty($password)) {
-                throw new \Exception("Tous les champs sont obligatoires. 1");
+                throw new \Exception("Tous les champs sont obligatoires.");
             }
+
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 
             // On crée l'objet User.
             $user = new User([
                 'username' => $username,
                 'email' => $email,
-                'password' => $password
+                'password' => $hashedPassword
             ]);
 
             // On ajoute le user.

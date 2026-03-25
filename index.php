@@ -37,9 +37,14 @@ try {
             $booksController->showBook();
             break;
 
+        case 'editBook':
+            $booksController = new BooksController();
+            $booksController->showEditBook();
+            break;
+
         case 'updateBook':
             $booksController = new BooksController();
-            $booksController->showUpdateBook();
+            $booksController->updateBook();
             break;
 
         case 'deleteBook':
@@ -55,6 +60,11 @@ try {
         case 'myAccount':
             $accountController = new AccountController();
             $accountController->showMyAccount();
+            break;
+
+        case 'updateMyAccount':
+            $accountController = new AccountController();
+            $accountController->updateMyAccount();
             break;
 
         case 'publicAccount':

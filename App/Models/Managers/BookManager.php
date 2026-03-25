@@ -95,6 +95,24 @@ namespace App\Models\Managers {
             return $books;
         }
 
+
+        /**
+         * Modifie un Book.
+         * @param Book $book : le book à modifier.
+         * @return void
+         */
+        public function updateBook(Book $book): void
+        {
+            $sql = "UPDATE book SET title = :title, author = :author, description = :description, availability = :availability WHERE book_id = :id";
+            $this->db->query($sql, [
+                'title' => $book->getTitle(),
+                'author' => $book->getAuthor(),
+                'description' => $book->getDescription(),
+                'availability' => $book->getAvailability(),
+                'id' => $book->getId()
+            ]);
+        }
+
         /**
          * Supprime un book.
          * @param int $id : l'id du book à supprimer.

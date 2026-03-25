@@ -7,6 +7,7 @@ namespace App\Models\Managers {
 
     use App\Models\Entities\User;
     use App\Models\Managers\AbstractEntityManager;
+    use App\Services\Utils;
 
     class UserManager extends AbstractEntityManager
     {
@@ -66,6 +67,23 @@ namespace App\Models\Managers {
         }
 
         /**
+         * Modifie un User.
+         * @param User $user : le user à modifier.
+         * @return void
+         */
+        public function updateMyAccount(User $user): void
+        {
+            $sql = "UPDATE user SET password = :password, email = :email, username = :username WHERE user_id = :id";
+            $this->db->query($sql, [
+                'email' => $user->getEmail(),
+                'password' => $user->getPassword(),
+                'username' => $user->getUsername(),
+                'id' => $user->getId()
+            ]);
+        }
+
+
+        /**
          * Ajoute un user.
          * @param User $user : l'user à ajouter.
          * @return void
@@ -74,12 +92,10 @@ namespace App\Models\Managers {
         {
             $sql = "INSERT INTO user ( username, email, password) VALUES (:username, :email, :password)";
 
-            $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-
             $statement = $this->db->query($sql, [
                 'username' => $user->getUsername(),
                 'email' => $user->getEmail(),
-                'password' => $hashedPassword
+                'password' => $user->getPassword()
             ]);
 
             return $statement->rowCount() > 0;

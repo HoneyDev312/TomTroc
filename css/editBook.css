@@ -1,0 +1,143 @@
+.update-book-wrapper {
+  height: calc(100dvh - var(--header-h) - var(--footer-h));
+  background-color: var(--color-bg-secondary);
+}
+
+.update-book-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(3 * var(--space-48));
+  padding-bottom: calc(var(--space-48) + var(--footer-h));
+}
+
+.update-book-content > h1 {
+  padding-top: calc(2 * var(--space-40));
+  margin-bottom: var(--space-24);
+}
+
+.update-book-informations {
+  flex: 1;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-20);
+  padding: var(--space-48) var(--space-48);
+  gap: calc(2 * var(--space-48));
+}
+
+.update-book-image {
+  flex: 1;
+}
+
+.update-book-image-wrapper {
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+}
+
+.update-book-image-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.update-book-image-link {
+  text-align: right;
+}
+
+.update-book-image > p {
+  font-size: var(--font-size-12);
+  color: var(--color-text-secondary);
+}
+
+.update-book-image-link > a {
+  font-size: var(--font-size-12);
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: var(--space-12);
+}
+
+.update-book-form-wrapper {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.update-book-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.update-book-form > label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-14);
+}
+
+.update-book-form > input {
+  height: 3.125rem;
+  border-radius: var(--radius-6);
+  background-color: var(--color-input-primary);
+  padding: 0 var(--space-8);
+  border: none;
+  margin-bottom: var(--space-16);
+  font-size: var(--font-size-14);
+  padding: 0 var(--space-16);
+}
+
+.availability-wrapper {
+  border: 0;
+  margin: 0 0 var(--space-16);
+  padding: 0;
+}
+
+.availability-wrapper legend {
+  font-size: var(--font-size-14);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.availability {
+  display: flex;
+  gap: var(--space-24);
+  align-items: center;
+}
+
+.availability label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--font-size-14);
+  cursor: pointer;
+}
+
+.availability input[type="radio"] {
+  accent-color: var(--color-bg-dark);
+  width: 1rem;
+  height: 1rem;
+}
+
+.update-book-form > textarea {
+  height: 12rem;
+  border-radius: var(--radius-6);
+  background-color: var(--color-input-primary);
+  padding: var(--space-12) var(--space-8);
+  border: none;
+  margin-bottom: var(--space-16);
+  font-size: var(--font-size-14);
+  padding-left: var(--space-16);
+  resize: none;
+}
+
+.update-book-form > input::placeholder {
+  font-size: var(--font-size-14);
+  color: var(--color-text-primary);
+}
+
+.update-book-form > button {
+  width: 100%;
+  border: none;
+}
