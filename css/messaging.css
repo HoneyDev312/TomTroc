@@ -1,0 +1,29 @@
+.messaging-wrapper {
+  height: calc(100dvh - var(--header-h) - var(--footer-h));
+  background-color: var(--color-bg-primary);
+}
+
+.messaging-content {
+  display: flex;
+  height: 100%;
+  padding: 0 calc(3 * var(--space-48));
+  min-height: 0;
+}
+
+.messaging-list,
+.messaging-thread {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.messaging-list {
+  height: 100%;
+  flex: 0 0 19rem;
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-48) 0 0 var(--space-24);
+}
+
+.messaging-thread {
+  flex: 1;
+  height: 100%;
+}

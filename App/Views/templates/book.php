@@ -22,7 +22,7 @@
                 <div class="owner-picture"></div>
                 <p><?= $book->getOwnername() ?></p>
             </a>
-            <a href="/index.php?action=messaging" class="btn btn-filled">
+            <a href="/index.php?action=messaging&id=<?= $book->getOwnerId() ?>" class="btn btn-filled">
                 Envoyer un message
             </a>
         </div>

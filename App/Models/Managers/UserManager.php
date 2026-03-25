@@ -7,7 +7,6 @@ namespace App\Models\Managers {
 
     use App\Models\Entities\User;
     use App\Models\Managers\AbstractEntityManager;
-    use App\Services\Utils;
 
     class UserManager extends AbstractEntityManager
     {
