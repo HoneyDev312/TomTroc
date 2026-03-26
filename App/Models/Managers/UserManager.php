@@ -18,7 +18,9 @@ namespace App\Models\Managers {
         public function getUserByEmail(string $email): ?User
         {
 
-            $sql = "SELECT user_id AS id, username, email, password, picture_uri, created_at FROM user WHERE email = :email";
+            $sql = "SELECT u.*, u.user_id AS id 
+                    FROM user u 
+                    WHERE email = :email";
             $result = $this->db->query($sql, ['email' => $email]);
             $user = $result->fetch();
             if ($user) {
@@ -28,7 +30,7 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère un user par son id.
+         * Récupère un private user par son id.
          * @param string $id
          * @return ?User 
          */
@@ -47,7 +49,7 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère un user par son id.
+         * Récupère un public user par son id.
          * @param string $id
          * @return ?User : id, username picture_uri, created_at
          */

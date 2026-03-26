@@ -67,7 +67,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Connexion de l'utilisateur.
+         * Submit du formulaire de connexion de l'utilisateur.
          * @return void
          */
         public function connectUser(): void
@@ -113,7 +113,50 @@ namespace App\Controllers {
         }
 
         /**
-         * Modification d'un User. 
+         * Submit du formulaire d'inscription d'un utilisateur.
+         * @return void
+         */
+        public function addUser(): void
+        {
+            // On récupère les données du formulaire.
+            $username = Utils::request("username");
+            $email = Utils::request("email");
+            $password = Utils::request("password");
+
+            // On vérifie que les données sont valides.
+            if (empty($username) || empty($email) || empty($password)) {
+                throw new \Exception("Tous les champs sont obligatoires.");
+            }
+
+            // On hash le mot de pass.
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            // On crée l'objet User.
+            $user = new User([
+                'username' => $username,
+                'email' => $email,
+                'password' => $hashedPassword
+            ]);
+
+            // On ajoute l'utilisateur en base de données et récupère le user_id du nouvel utilisateur
+            $userManager = new UserManager();
+            $userId = $userManager->addUser($user);
+
+            // On vérifie que l'ajout a bien fonctionné.
+            if (!$user || !$userId) {
+                throw new \Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
+            }
+
+            // On enregistre l'utilisateur en session.
+            $_SESSION['user'] = $user;
+            $_SESSION['userId'] = $userId;
+
+            // On redirige vers la page Home.
+            Utils::redirect("home");
+        }
+
+        /**
+         * Submit du formulaire de mise à jour d'un User. 
          * @return void
          */
         public function updateMyAccount(): void
@@ -131,6 +174,7 @@ namespace App\Controllers {
                 throw new \Exception("Tous les champs sont obligatoires.");
             }
 
+            // on vérifie si un nouveau mot de passe est envoyé.
             $password = '';
             if ($newPassword !== '') {
                 $password = password_hash($newPassword, PASSWORD_DEFAULT);
@@ -151,64 +195,25 @@ namespace App\Controllers {
             $userManager = new UserManager();
             $userManager->updateMyAccount($user);
 
-            // On redirige vers la page d'administration.
             // On redirige vers la page mon compte.
             Utils::redirect("my-account.show", ["id" => (int) $id]);
         }
 
         /**
-         * Enregitrement d'un utilisateur.
-         * @return void
-         */
-        public function addUser(): void
-        {
-            // On récupère les données du formulaire.
-            $username = Utils::request("username");
-            $email = Utils::request("email");
-            $password = Utils::request("password");
-
-            // On vérifie que les données sont valides.
-            if (empty($username) || empty($email) || empty($password)) {
-                throw new \Exception("Tous les champs sont obligatoires.");
-            }
-
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            // On crée l'objet User.
-            $user = new User([
-                'username' => $username,
-                'email' => $email,
-                'password' => $hashedPassword
-            ]);
-
-            // On ajoute le user.
-            $userManager = new UserManager();
-            $userId = $userManager->addUser($user);
-
-            // On vérifie que l'ajout a bien fonctionné.
-            if (!$user || !$userId) {
-                throw new \Exception("Une erreur est survenue lors l'enregistrement de l'utilisateur");
-            }
-
-            // On enregistre l'utilisateur en session.
-            $_SESSION['user'] = $user;
-            $_SESSION['userId'] = $userId;
-
-            // On redirige vers la page Home.
-            Utils::redirect("home");
-        }
-
-        /**
-         * Enregitrement d'un utilisateur.
+         * Deconexion d'un utilisateur.
          * @return void
          */
         public function logoutUser(): void
         {
+            // Vérification du status de la session
             if (session_status() === PHP_SESSION_ACTIVE) {
+                // On vide la session
                 $_SESSION = [];
+                // Destruction de la session
                 session_destroy();
             }
 
+            // On redirige vers la page Home.
             Utils::redirect('home');
         }
     }

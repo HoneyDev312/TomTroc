@@ -11,6 +11,7 @@ require_once 'config/autoloader.php';
 
 use App\Core\Router;
 
+// Instanciation du Router
 $router = new Router();
 
 // Charge la déclaration des routes

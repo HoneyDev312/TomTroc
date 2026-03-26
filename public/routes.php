@@ -11,47 +11,47 @@ use App\Controllers\MessageController;
  * On déclare ici toutes les routes du projet.
  */
 
-$r = $router->get('/', [BooksController::class, 'showHome'])->name('home');
-$router->registerNamedRoute($r);
+$route = $router->get('/', [BooksController::class, 'showHome'])->name('home');
+$router->registerNamedRoute($route);
 
-$r = $router->get('our-books', [BooksController::class, 'showOurBooks'])->name('books.show');
-$router->registerNamedRoute($r);
+$route = $router->get('our-books', [BooksController::class, 'showOurBooks'])->name('books.show');
+$router->registerNamedRoute($route);
 
-$r = $router->get('book/{id}', [BooksController::class, 'showBook'])->name('book.show');
-$router->registerNamedRoute($r);
+$route = $router->get('book/{id}', [BooksController::class, 'showBook'])->name('book.show');
+$router->registerNamedRoute($route);
 
-$r = $router->get('edit-book/{id}', [BooksController::class, 'showEditBook'])->name('edit-book.show');
-$router->registerNamedRoute($r);
+$route = $router->get('edit-book/{id}', [BooksController::class, 'showEditBook'])->name('edit-book.show');
+$router->registerNamedRoute($route);
 
-$r = $router->post('update-book', [BooksController::class, 'updateBook'])->name('book.update');
-$router->registerNamedRoute($r);
+$route = $router->post('update-book', [BooksController::class, 'updateBook'])->name('book.update');
+$router->registerNamedRoute($route);
 
-$r = $router->get('delete-book/{bookId}/{userId}', [BooksController::class, 'deleteBook'])->name('book.delete');
-$router->registerNamedRoute($r);
+$route = $router->get('delete-book/{bookId}/{userId}', [BooksController::class, 'deleteBook'])->name('book.delete');
+$router->registerNamedRoute($route);
 
-$r = $router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.show');
-$router->registerNamedRoute($r);
+$route = $router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.show');
+$router->registerNamedRoute($route);
 
-$r = $router->get('signin', [AccountController::class, 'showSignIn'])->name('signin.show');
-$router->registerNamedRoute($r);
+$route = $router->get('signin', [AccountController::class, 'showSignIn'])->name('signin.show');
+$router->registerNamedRoute($route);
 
-$r = $router->post('connect-user', [AccountController::class, 'connectUser'])->name('signin.submit');
-$router->registerNamedRoute($r);
+$route = $router->post('connect-user', [AccountController::class, 'connectUser'])->name('signin.submit');
+$router->registerNamedRoute($route);
 
-$r = $router->get('signup', [AccountController::class, 'showSignUp'])->name('signup.show');
-$router->registerNamedRoute($r);
+$route = $router->get('signup', [AccountController::class, 'showSignUp'])->name('signup.show');
+$router->registerNamedRoute($route);
 
-$r = $router->post('add-user', [AccountController::class, 'addUser'])->name('signup.submit');
-$router->registerNamedRoute($r);
+$route = $router->post('add-user', [AccountController::class, 'addUser'])->name('signup.submit');
+$router->registerNamedRoute($route);
 
-$r = $router->post('update-my-account', [AccountController::class, 'updateMyAccount'])->name('my-account.update');
-$router->registerNamedRoute($r);
+$route = $router->post('update-my-account', [AccountController::class, 'updateMyAccount'])->name('my-account.update');
+$router->registerNamedRoute($route);
 
-$r = $router->get('my-account/{id}', [AccountController::class, 'showMyAccount'])->name('my-account.show');
-$router->registerNamedRoute($r);
+$route = $router->get('my-account/{id}', [AccountController::class, 'showMyAccount'])->name('my-account.show');
+$router->registerNamedRoute($route);
 
-$r = $router->get('public-account/{id}', [AccountController::class, 'showPublicAccount'])->name('public-account.show');
-$router->registerNamedRoute($r);
+$route = $router->get('public-account/{id}', [AccountController::class, 'showPublicAccount'])->name('public-account.show');
+$router->registerNamedRoute($route);
 
-$r = $router->get('logout', [AccountController::class, 'logoutUser'])->name('logout');
-$router->registerNamedRoute($r);
+$route = $router->get('logout', [AccountController::class, 'logoutUser'])->name('logout');
+$router->registerNamedRoute($route);
