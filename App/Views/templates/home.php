@@ -32,6 +32,11 @@
                             <p class="card-title"><?= $book->getTitle() ?></p>
                             <p class="card-author"><?= $book->getAuthor() ?></p>
                             <span class="card-owner">Vendu par: <?= $book->getOwnername() ?></span>
+                            <?php if (!$book->getAvailability()): ?>
+                                <span class="card-tag">
+                                    non-dispo.
+                                </span>
+                            <?php endif ?>
                         </div>
                     </div>
                 </a>

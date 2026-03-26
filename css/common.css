@@ -72,6 +72,7 @@ h2 {
   border-bottom-left-radius: var(--radius-12);
   border-bottom-right-radius: var(--radius-12);
   padding-bottom: var(--space-24);
+  position: relative;
 }
 
 .card-img {
@@ -106,6 +107,18 @@ h2 {
   font-weight: var(--regular);
   font-style: italic;
   color: var(--color-text-secondary);
+}
+
+.card-tag {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-tertiary);
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-size-8);
+  font-weight: var(--semibold);
+  background-color: var(--color-danger);
 }
 
 @media (min-width: 768px) {
