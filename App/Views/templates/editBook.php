@@ -22,14 +22,11 @@
                     <input type="text" name="author" id="author" value="<?= $book->getAuthor() ?>">
                     <label for="description">Description</label>
                     <textarea name="description" id="description" required><?= $book->getDescription() ?></textarea>
-                    <fieldset class="availability-wrapper">
-                        <legend>Disponibilité</legend>
-                        <div class="availability">
-                            <label><input type="radio" name="availability" value="1" <?= $book->getAvailability() ? 'checked' : '' ?>> Disponible</label>
-                            <label><input type="radio" name="availability" value="0" <?= $book->getAvailability() === 0 ? 'checked' : '' ?>> Non disponible</label>
-                        </div>
-                    </fieldset>
-
+                    <label for="availability">Disponibilité</label>
+                    <select name="availability" id="availability">
+                        <option value="1" <?= $book->getAvailability() == 1 ? 'selected' : '' ?>>Disponible</option>
+                        <option value="0" <?= $book->getAvailability() == 0 ? 'selected' : '' ?>>Non disponible</option>
+                    </select>
                     <button class="submit btn btn-filled">Mettre à jour</button>
                 </form>
             </div>
