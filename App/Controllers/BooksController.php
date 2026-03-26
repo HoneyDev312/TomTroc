@@ -36,43 +36,51 @@ namespace App\Controllers {
         }
 
         /**
-         * Affiche la page de mise à jour d'un livre.
-         * @return void
-         */
-        public function showEditBook(): void
-        {
-            $id = Utils::request("id", -1);
-
-            $bookManager = new BookManager();
-            $book = $bookManager->getBookById($id);
-
-            $view = new View("Modifier un livre", "editBook");
-            $view->render("editBook", ['book' => $book]);
-        }
-
-        /**
          * Affiche la page d'un livre.
          * @return void
          */
-        public function showBook(): void
+        public function showBook(string $id): void
         {
-            $id = Utils::request("id", -1);
+            $bookId = (int) $id;
+
+            if ($bookId <= 0) {
+                throw new \RuntimeException('ID livre invalide');
+            }
 
             $bookManager = new BookManager();
-            $book = $bookManager->getBookById($id);
+            $book = $bookManager->getBookById($bookId);
+
+            if ($book === null) {
+                throw new \RuntimeException('Livre introuvable');
+            }
 
             $view = new View("Nos Livres", "book");
             $view->render("book", ['book' => $book]);
         }
 
         /**
-         * Modification d'un book. 
+         * Affiche la page du formulaire de mise à jour d'un livre.
+         * @return void
+         */
+        public function showEditBook(string $id): void
+        {
+            $bookId = $id;
+
+            $bookManager = new BookManager();
+            $book = $bookManager->getBookById($bookId);
+
+            $view = new View("Modifier un livre", "editBook");
+            $view->render("editBook", ['book' => $book]);
+        }
+
+        /**
+         * Submit de mis à jour d'un livre. 
          * @return void
          */
         public function updateBook(): void
         {
 
-            // On récupère les données du formulaire.
+            // On récupère les données du formulaire POST.
             $id = Utils::request("id");
             $title = Utils::request("title");
             $author = Utils::request("author");
@@ -94,35 +102,34 @@ namespace App\Controllers {
                 'availability' => (int) $availability,
             ]);
 
-            // On met à jour l'article.
+            // On met à jour le livre.
             $bookManager = new BookManager();
             $bookManager->updateBook($book);
 
-            // On redirige vers la page d'administration.
             // On redirige vers la page mon compte.
-            Utils::redirect("myAccount", ["id" => (int) $userId]);
+            Utils::redirect("my-account.show", ["id" => (int) $userId]);
         }
 
         /**
          * Suppression d'un article.
          * @return void
          */
-        public function deleteBook(): void
+        public function deleteBook(string $book_id, string $user_id): void
         {
+            // On récupère les params dans l'url GET.
+            $bookId = (int) $book_id;
+            $userId = (int) $user_id;
 
-            $id = Utils::request("id");
-            $userId = Utils::request("userId");
-
-            if ($id <= 0) {
-                throw new \RuntimeException('Id utilisateur invalide');
+            if ($bookId <= 0) {
+                throw new \RuntimeException('Id de livre invalide');
             }
 
             // On supprime le book.
             $bookManager = new BookManager();
-            $bookManager->deleteBook((int) $id);
+            $bookManager->deleteBook($bookId);
 
             // On redirige vers la page mon compte.
-            Utils::redirect("myAccount", ["id" => $userId]);
+            Utils::redirect("my-account.show", ["id" => $userId]);
         }
     }
 }

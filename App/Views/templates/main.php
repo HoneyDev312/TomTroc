@@ -22,7 +22,7 @@
     <header>
         <nav aria-label="Navigation principale">
             <div class="nav-wrapper container flex">
-                <a href="/index.php" class="logo-link">
+                <a href="/" class="logo-link">
                     <div class="logo-wrapper">
                         <img src="/assets/svg/logo_white.svg" alt="Logo Tom Troc">
                     </div>
@@ -31,12 +31,12 @@
 
                 <ul class="link-wrapper flex">
                     <li>
-                        <a href="/index.php">
+                        <a href="/">
                             <span>Accueil</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/index.php?action=ourBooks">
+                        <a href="/our-books">
                             Nos livres à l'échange
                         </a>
                     </li>
@@ -44,16 +44,18 @@
                 </ul>
 
                 <ul class="account-wrapper flex">
-                    <li>
-                        <a href="/index.php?action=messaging" class="link-message flex">
-                            <img src="/assets/svg/message.svg" alt="">
-                            <span>Messagerie</span>
-                            <span class="message-counter flex">1</span>
-                        </a>
-                    </li>
                     <?php if (isset($_SESSION['user'])) : ?>
                         <li>
-                            <a href="/index.php?action=myAccount&id=<?= (int) $_SESSION['userId'] ?>" class="link-account flex">
+
+                            <a href="/messaging/<?= (int) $_SESSION['userId'] ?>" class="link-message flex">
+                                <img src="/assets/svg/message.svg" alt="">
+                                <span>Messagerie</span>
+                                <span class="message-counter flex">1</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/my-account/<?= (int) $_SESSION['userId'] ?>" class="link-account flex">
                                 <img src="/assets/svg/account.svg" alt="">
                                 <span>Mon compte</span>
                             </a>
@@ -61,13 +63,13 @@
                     <?php endif ?>
                     <?php if (!isset($_SESSION['user'])) : ?>
                         <li>
-                            <a href="/index.php?action=signin" class="link-connection flex">
+                            <a href="/signin" class="link-connection flex">
                                 <span>Connexion</span>
                             </a>
                         </li>
                     <?php else: ?>
                         <li>
-                            <a href="/index.php?action=logout">Déconnexion</a>
+                            <a href="/logout">Déconnexion</a>
                         </li>
                     <?php endif ?>
                 </ul>

@@ -12,13 +12,18 @@ namespace App\Controllers {
          * Affiche la Messagerie.
          * @return void
          */
-        public function showMessaging(): void
+        public function showMessaging(string $id): void
         {
-            $id = Utils::request("id", -1);
+            // On récupère l'id.
+            $userId = (int) $id;
+
+            if ($userId <= 0) {
+                throw new \RuntimeException('ID livre invalide');
+            }
 
             $messageManager = new MessageManager();
-            $messages = $messageManager->getMessagesById($id);
-            $lastMessages = $messageManager->getLastMessagesById($id);
+            $messages = $messageManager->getMessagesById($userId);
+            $lastMessages = $messageManager->getLastMessagesById($userId);
 
             $view = new View("Messagerie", "messaging");
             $view->render("messaging", ["messages" => $messages, "lastMessage" => $lastMessages]);

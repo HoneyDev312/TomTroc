@@ -5,103 +5,21 @@ declare(strict_types=1);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
+
 require_once 'config/config.php';
 require_once 'config/autoloader.php';
 
-use App\Services\Utils;
-use App\Controllers\BooksController;
-use App\Controllers\AccountController;
-use App\Controllers\MessageController;
+use App\Core\Router;
 
-// On récupère l'action demandée par l'utilisateur.
-// Si aucune action n'est demandée, on affiche la page d'accueil.
-$action = Utils::request('action', 'home');
+// Instanciation du Router
+$router = new Router();
 
-// Try catch global pour gérer les erreurs
+// Charge la déclaration des routes
+require_once 'public/routes.php';
+
 try {
-    // Pour chaque action, on appelle le bon contrôleur et la bonne méthode.
-    switch ($action) {
-
-        case 'home':
-            $booksController = new BooksController();
-            $booksController->showHome();
-            break;
-
-        case 'ourBooks':
-            $booksController = new BooksController();
-            $booksController->showOurBooks();
-            break;
-
-        case 'book':
-            $booksController = new BooksController();
-            $booksController->showBook();
-            break;
-
-        case 'editBook':
-            $booksController = new BooksController();
-            $booksController->showEditBook();
-            break;
-
-        case 'updateBook':
-            $booksController = new BooksController();
-            $booksController->updateBook();
-            break;
-
-        case 'deleteBook':
-            $booksController = new BooksController();
-            $booksController->deleteBook();
-            break;
-
-        case 'messaging':
-            $messageController = new MessageController();
-            $messageController->showMessaging();
-            break;
-
-        case 'myAccount':
-            $accountController = new AccountController();
-            $accountController->showMyAccount();
-            break;
-
-        case 'updateMyAccount':
-            $accountController = new AccountController();
-            $accountController->updateMyAccount();
-            break;
-
-        case 'publicAccount':
-            $accountController = new AccountController();
-            $accountController->showPublicAccount();
-            break;
-
-        case 'signin':
-            $accountController = new AccountController();
-            $accountController->showSignIn();
-            break;
-
-        case 'connectUser':
-            $accountController = new AccountController();
-            $accountController->connectUser();
-            break;
-
-        case 'signup':
-            $accountController = new AccountController();
-            $accountController->showSignUp();
-            break;
-
-        case 'addUser':
-            $accountController = new AccountController();
-            $accountController->addUser();
-            break;
-
-        case 'logout':
-            session_start();
-            $_SESSION = [];
-            session_destroy();
-
-            header('Location: /index.php');
-            exit;
-        default:
-            throw new Exception("La page demandée n'existe pas.");
-    }
-} catch (Exception $e) {
-    echo $e;
+    $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+} catch (\Throwable $e) {
+    http_response_code(404);
+    echo $e->getMessage();
 }

@@ -6,7 +6,7 @@
         </div>
         <div class="ourBooks-grid">
             <?php foreach ($books as $book): ?>
-                <a class="card-link" href="/index.php?action=book&id=<?= (int) $book->getId() ?>">
+                <a class="card-link" href="/book/<?= (int) $book->getId() ?>">
                     <div class="card card-grid">
                         <img class="card-img" src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="">
                         <div class="card-description">
