@@ -31,7 +31,7 @@ final class Router
      */
     public function get(string $path, array $handler): Route
     {
-        $route = new Route('GET', $path, $handler);
+        $route = new Route('GET', $path, $handler, fn(Route $r) => $this->registerNamedRoute($r));
         $this->addRoute($route);
         return $route;
     }
@@ -41,7 +41,7 @@ final class Router
      */
     public function post(string $path, array $handler): Route
     {
-        $route = new Route('POST', $path, $handler);
+        $route = new Route('POST', $path, $handler, fn(Route $r) => $this->registerNamedRoute($r));
         $this->addRoute($route);
         return $route;
     }
@@ -53,17 +53,13 @@ final class Router
     private function addRoute(Route $route): void
     {
         $this->routes[] = $route;
-
-        if ($route->getName() !== null) {
-            self::$namedRoutes[$route->getName()] = $route;
-        }
     }
 
     /**
      * Enregistre explicitement une route nommée.
      * Utile car ->name() est appelé après get()/post() dans ton usage.
      */
-    public function registerNamedRoute(Route $route): void
+    private function registerNamedRoute(Route $route): void
     {
         if ($route->getName() !== null) {
             self::$namedRoutes[$route->getName()] = $route;
