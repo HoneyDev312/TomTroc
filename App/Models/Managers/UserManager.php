@@ -83,6 +83,20 @@ namespace App\Models\Managers {
             ]);
         }
 
+        /**
+         * Modifie la photo du User.
+         * @param User $user : le user à modifier.
+         * @return void
+         */
+        public function updateMyAccountPicture(string $id, string $fileName): void
+        {
+            $sql = "UPDATE user SET picture_uri = :picture_uri WHERE user_id = :id";
+            $this->db->query($sql, [
+                'picture_uri' => $fileName,
+                'id' => $id
+            ]);
+        }
+
 
         /**
          * Ajoute un user.

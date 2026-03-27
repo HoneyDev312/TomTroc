@@ -40,6 +40,7 @@
 .my-account-avatar {
   height: 8.3rem;
   width: 8.3rem;
+  justify-content: center;
   border-radius: var(--radius-pill);
   background-color: var(--color-bg-secondary);
   overflow: hidden;
@@ -52,7 +53,7 @@
   display: block;
 }
 
-.my-account-informations-box > a {
+.my-account-informations-box > form {
   font-size: var(--font-size-14);
   color: var(--color-text-secondary);
   text-decoration: underline;

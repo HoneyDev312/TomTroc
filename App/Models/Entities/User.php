@@ -80,11 +80,15 @@ namespace App\Models\Entities {
         }
 
         /**
-         * Getter pour le pictureUri.
-         * @return string
+         * Getter affichage (retire le timestamp initial).
+         * 20260320090000_esther.jpg -> esther.jpg
          */
         public function getPictureUri(): ?string
         {
+            if ($this->pictureUri === null || $this->pictureUri === '') {
+                return $this->pictureUri;
+            }
+
             return $this->pictureUri;
         }
 

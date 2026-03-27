@@ -200,6 +200,55 @@ namespace App\Controllers {
         }
 
         /**
+         * Submit du formulaire de mise à jour d'une photo de User. 
+         * @return void
+         */
+        public function updateMyAccountPicture(): void
+        {
+
+            // On récupère les données du formulaire.
+            $id = Utils::request("id");
+            $file = $_FILES["pictureFile"];
+
+            // On vérifie que les données sont valides.
+            if (empty($file)) {
+                throw new \Exception("Erreur lors du téléchargement.");
+            }
+            $tmp = $file['tmp_name'];
+            $originalName = $file["full_path"];
+            $timestamp = date('YmdHis');
+            $fileName = $timestamp . '_' . $originalName;
+
+            //On met à jour la piucture du user en base de données.
+            $userManager = new UserManager();
+            $user = $userManager->getPrivateUserById((int)$id);
+            $old = $user->getPictureUri();
+            $userManager->updateMyAccountPicture($id, $fileName);
+
+            if (!empty($old)) {
+                $oldPath = dirname(__DIR__, 2) . '/assets/users/' . $old;
+                if (is_file($oldPath) && $old !== $fileName) {
+                    unlink($oldPath);
+                }
+            }
+
+            //On met à jour la piucture dand le dossier assets/users.
+            $uploadDir = dirname(__DIR__, 2) . '/assets/users/';
+            if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true)) {
+                throw new \Exception("Impossible de créer le dossier upload.");
+            }
+
+            $targetPath = $uploadDir . $fileName;
+
+            if (!move_uploaded_file($tmp, $targetPath)) {
+                exit('Erreur upload');
+            }
+
+            // On redirige vers la page mon compte.
+            Utils::redirect("my-account.show", ["id" => (int) $id]);
+        }
+
+        /**
          * Deconexion d'un utilisateur.
          * @return void
          */

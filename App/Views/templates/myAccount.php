@@ -3,12 +3,23 @@
         <h1>Mon compte</h1>
         <div class="my-account-informations flex">
             <div class="my-account-informations-box flex left">
-                <div class="my-account-avatar">
-                    <img
-                        src="<?= BOOK_IMAGE_BASE_URL_USERS . strtolower($user->getUsername()) . ".jpg" ?>" alt="" />
+                <div class="my-account-avatar flex">
+                    <?php if ($user->getPictureUri() !== null): ?>
+                        <img
+                            src="<?= BOOK_IMAGE_BASE_URL_USERS . htmlspecialchars($user->getPictureUri()) ?>" alt="" />
+                    <?php else: ?>
+                        <p>PAS DE PHOTO</p>
+                    <?php endif ?>
                 </div>
-                <a href="/">modifier</a>
+
+                <form id="my-account-avatar-form" action="/update-my-account-picture" method="post" enctype="multipart/form-data">
+                    <input type="text" name="id" id="id" value="<?= $user->getId() ?>" hidden>
+                    <label for="pictureFile">modifier</label>
+                    <input class="my-account-avatar-file" type="file" name="pictureFile" id="pictureFile" accept="image/*" hidden>
+                </form>
+
                 <div class="my-account-informations-separator"></div>
+
                 <p class="my-account-informations-username"><?= $user->getUsername() ?></p>
                 <p class="my-account-informations-since">Membre depuis le <?= $user->getCreatedAt()->format('d/m/Y') ?></p>
                 <p class="my-account-informations-subtitle">BIBLIOTHÈQUE</p>
