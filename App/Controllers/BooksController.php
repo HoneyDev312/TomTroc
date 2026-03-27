@@ -35,6 +35,22 @@ namespace App\Controllers {
             $view->render("ourBooks", ['books' => $books]);
         }
 
+        public function searchBooks(): void
+        {
+            $titleTrimmed = trim((string) Utils::request('title', ''));
+
+            $bookManager = new BookManager();
+            $books = ($titleTrimmed === '')
+                ? $bookManager->getAllBooks()
+                : $bookManager->searchBooksByTitle($titleTrimmed);
+
+            $view = new View('Nos Livres', 'ourBooks');
+            $view->render('ourBooks', [
+                'books' => $books,
+                'title' => $titleTrimmed
+            ]);
+        }
+
         /**
          * Affiche la page d'un livre.
          * @return void
@@ -160,7 +176,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Suppression d'un article.
+         * Suppression d'un livre.
          * @return void
          */
         public function deleteBook(string $book_id, string $user_id): void

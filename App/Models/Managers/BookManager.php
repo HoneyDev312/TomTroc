@@ -95,6 +95,30 @@ namespace App\Models\Managers {
             return $books;
         }
 
+        /**
+         * Récupère un livre par son titre.
+         * @param string : un title de livre
+         * @return array : un tableau d'objets Book.
+         */
+        public function searchBooksByTitle(string $title): array
+        {
+            $sql = "SELECT  b.*, b.book_id AS id,u.username AS ownername
+            FROM book b
+            INNER JOIN user u ON u.user_id = b.owner_id
+            WHERE b.title LIKE :title
+            ORDER BY b.created_at DESC";
+
+            $result = $this->db->query($sql, [
+                'title' => '%' . $title . '%'
+            ]);
+
+            $books = [];
+            while ($row = $result->fetch()) {
+                $books[] = new Book($row);
+            }
+
+            return $books;
+        }
 
         /**
          * Modifie un Book.

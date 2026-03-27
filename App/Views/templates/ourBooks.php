@@ -2,7 +2,14 @@
     <div class="ourBooks-content container">
         <div class="ourBooks-header">
             <h1>Nos livres à l'échange</h1>
-            <input class="ourBooks-search " type="text" name="search" id="search" placeholder="Rechercher un livre">
+            <form class="ourBooks-form" method="get" action="/search-book">
+                <input
+                    class="ourBooks-search"
+                    type="search"
+                    name="title"
+                    value="<?= htmlspecialchars($title ?? '') ?>"
+                    placeholder="Rechercher un titre">
+            </form>
         </div>
         <div class="ourBooks-grid">
             <?php foreach ($books as $book): ?>

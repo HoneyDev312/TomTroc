@@ -21,6 +21,10 @@ $route = $router->get('edit-book/{id}', [BooksController::class, 'showEditBook']
 
 $route = $router->post('update-book', [BooksController::class, 'updateBook'])->name('book.update');
 
+$route = $router->post('update-book-picture', [BooksController::class, 'updateBookPicture'])->name('book-picture.update');
+
+$route = $router->get('search-book', [BooksController::class, 'searchBooks'])->name('books.search');
+
 $route = $router->get('delete-book/{bookId}/{userId}', [BooksController::class, 'deleteBook'])->name('book.delete');
 
 $route = $router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.show');
@@ -36,8 +40,6 @@ $route = $router->post('add-user', [AccountController::class, 'addUser'])->name(
 $route = $router->post('update-my-account', [AccountController::class, 'updateMyAccount'])->name('my-account.update');
 
 $route = $router->post('update-my-account-picture', [AccountController::class, 'updateMyAccountPicture'])->name('my-account-picture.update');
-
-$route = $router->post('update-book-picture', [BooksController::class, 'updateBookPicture'])->name('book-picture.update');
 
 $route = $router->get('my-account/{id}', [AccountController::class, 'showMyAccount'])->name('my-account.show');
 
