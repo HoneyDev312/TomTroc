@@ -91,17 +91,9 @@ namespace App\Models\Entities {
             $this->pictureUri = $pictureUri;
         }
 
-        /**
-         * Getter brut (valeur exacte stockée en base).
-         */
-        public function getPictureUriRaw(): ?string
-        {
-            return $this->pictureUri;
-        }
 
         /**
-         * Getter affichage (retire le timestamp initial).
-         * 20260320090000_esther.jpg -> esther.jpg
+         * Getter pour le pictureUri.
          */
         public function getPictureUri(): ?string
         {
@@ -109,7 +101,7 @@ namespace App\Models\Entities {
                 return $this->pictureUri;
             }
 
-            return preg_replace('/^\d+_/', '', $this->pictureUri);
+            return $this->pictureUri;
         }
 
         /** 

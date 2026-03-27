@@ -6,10 +6,14 @@
             <div class="update-book-image">
                 <p>Photo</p>
                 <div class="update-book-image-wrapper">
-                    <img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="" />
+                    <img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . htmlspecialchars($book->getPictureUri()) ?>" alt="" />
                 </div>
                 <div class="update-book-image-link">
-                    <a>Modifier la photo</a>
+                    <form id="update-picture-form" class='update-picture-form' action="/update-book-picture" method="post" enctype="multipart/form-data">
+                        <input type="text" name="id" id="id" value="<?= $book->getId() ?>" hidden>
+                        <label for="pictureFile">Modifier la photo</label>
+                        <input class="update-picture-file" type="file" name="pictureFile" id="pictureFile" accept="image/*" hidden>
+                    </form>
                 </div>
             </div>
             <div class="update-book-form-wrapper flex">

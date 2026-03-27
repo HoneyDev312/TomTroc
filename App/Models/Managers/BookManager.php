@@ -114,6 +114,21 @@ namespace App\Models\Managers {
         }
 
         /**
+         * Modifie la photo du Book.
+         * @param Book $book : le livre à modifier.
+         * @return void
+         */
+        public function updateBookPicture(string $id, string $fileName): void
+        {
+            $sql = "UPDATE book SET picture_uri = :picture_uri WHERE book_id = :id";
+            $this->db->query($sql, [
+                'picture_uri' => $fileName,
+                'id' => $id
+            ]);
+        }
+
+
+        /**
          * Supprime un book.
          * @param int $id : l'id du book à supprimer.
          * @return void

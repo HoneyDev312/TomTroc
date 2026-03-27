@@ -37,6 +37,8 @@ $route = $router->post('update-my-account', [AccountController::class, 'updateMy
 
 $route = $router->post('update-my-account-picture', [AccountController::class, 'updateMyAccountPicture'])->name('my-account-picture.update');
 
+$route = $router->post('update-book-picture', [BooksController::class, 'updateBookPicture'])->name('book-picture.update');
+
 $route = $router->get('my-account/{id}', [AccountController::class, 'showMyAccount'])->name('my-account.show');
 
 $route = $router->get('public-account/{id}', [AccountController::class, 'showPublicAccount'])->name('public-account.show');

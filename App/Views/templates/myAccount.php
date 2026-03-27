@@ -12,7 +12,7 @@
                     <?php endif ?>
                 </div>
 
-                <form id="my-account-avatar-form" action="/update-my-account-picture" method="post" enctype="multipart/form-data">
+                <form id="update-picture-form" action="/update-my-account-picture" method="post" enctype="multipart/form-data">
                     <input type="text" name="id" id="id" value="<?= $user->getId() ?>" hidden>
                     <label for="pictureFile">modifier</label>
                     <input class="my-account-avatar-file" type="file" name="pictureFile" id="pictureFile" accept="image/*" hidden>
@@ -63,7 +63,7 @@
                 <tbody>
                     <?php foreach ($books as $book): ?>
                         <tr>
-                            <td class="my-account-books-table-image"><img src=<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?> alt="Couverture The Kinfolk Table" width="64" height="64"></td>
+                            <td class="my-account-books-table-image"><img src=<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?> alt="photo du livre" width="64" height="64"></td>
                             <td><?= $book->getTitle() ?></td>
                             <td><?= $book->getAuthor() ?></td>
                             <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>

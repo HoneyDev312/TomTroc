@@ -53,7 +53,7 @@
   color: var(--color-text-secondary);
 }
 
-.update-book-image-link > a {
+.update-picture-form {
   font-size: var(--font-size-12);
   text-decoration: underline;
   display: inline-block;
