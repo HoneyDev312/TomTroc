@@ -19,6 +19,12 @@
   padding: 0 var(--space-40);
 }
 
+.ourBooks-search:focus {
+  outline: none;
+  border-color: var(--color-brand-primary);
+  border-style: solid;
+}
+
 .ourBooks-search::placeholder {
   color: var(--color-text-secondary);
   font-size: var(--font-size-14);

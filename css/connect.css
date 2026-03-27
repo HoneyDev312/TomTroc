@@ -40,6 +40,12 @@
   padding: 0 var(--space-8);
 }
 
+.form-connect:focus-within > input:focus {
+  outline: none;
+  border-color: var(--color-brand-primary);
+  border-style: solid;
+}
+
 .form-connect > button {
   margin-bottom: var(--space-40);
   border: none;
