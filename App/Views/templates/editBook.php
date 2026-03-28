@@ -6,7 +6,7 @@
             <div class="update-book-image">
                 <p>Photo</p>
                 <div class="update-book-image-wrapper">
-                    <img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . htmlspecialchars($book->getPictureUri()) ?>" alt="" />
+                    <img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . htmlspecialchars($book->getPictureUri()) ?>" alt="" />
                 </div>
                 <div class="update-book-image-link">
                     <form id="update-picture-form" class='update-picture-form' action="/update-book-picture" method="post" enctype="multipart/form-data">

@@ -7,7 +7,7 @@
     <div class="book-content container flex">
 
         <div class="book-picture">
-            <img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="">
+            <img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?>" alt="">
         </div>
 
         <div class="book-informations">

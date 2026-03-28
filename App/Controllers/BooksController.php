@@ -153,14 +153,14 @@ namespace App\Controllers {
             $bookManager->updateBookPicture($id, $fileName);
 
             if (!empty($old)) {
-                $oldPath = dirname(__DIR__, 2) . '/assets/images/' . $old;
+                $oldPath = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_BOOKS . $old;
                 if (is_file($oldPath) && $old !== $fileName) {
                     unlink($oldPath);
                 }
             }
 
             //On met à jour la picture dand le dossier assets/users.
-            $uploadDir = dirname(__DIR__, 2) . '/assets/images/';
+            $uploadDir = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_BOOKS;
             if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true)) {
                 throw new \Exception("Impossible de créer le dossier upload.");
             }
@@ -168,7 +168,7 @@ namespace App\Controllers {
             $targetPath = $uploadDir . $fileName;
 
             if (!move_uploaded_file($tmp, $targetPath)) {
-                exit('Erreur upload');
+                throw new \Exception('Erreur upload');
             }
 
             // On redirige vers la page mon compte.

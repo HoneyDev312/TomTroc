@@ -4,7 +4,7 @@
             <div class="my-account-informations-box flex left">
                 <div class="my-account-avatar">
                     <img
-                        src="<?= BOOK_IMAGE_BASE_URL_USERS . strtolower($user->getUsername()) . ".jpg" ?>" alt="" />
+                        src="<?= BOOK_IMAGE_BASE_URL_USERS . $user->getPictureUri() ?>" alt="" />
                 </div>
                 <div class="my-account-informations-separator"></div>
                 <p class="my-account-informations-username"><?= $user->getUsername() ?></p>
@@ -31,7 +31,7 @@
                     <tbody>
                         <?php foreach ($books as $book): ?>
                             <tr>
-                                <td class="my-account-books-table-image"><img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?>" alt="Couverture The Kinfolk Table" width="64" height="64"></td>
+                                <td class="my-account-books-table-image"><img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?>" alt="Couverture The Kinfolk Table" width="64" height="64"></td>
                                 <td><?= $book->getTitle() ?></td>
                                 <td><?= $book->getAuthor() ?></td>
                                 <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(70) ?></td>

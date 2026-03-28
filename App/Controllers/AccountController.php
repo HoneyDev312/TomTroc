@@ -226,14 +226,14 @@ namespace App\Controllers {
             $userManager->updateMyAccountPicture($id, $fileName);
 
             if (!empty($old)) {
-                $oldPath = dirname(__DIR__, 2) . '/assets/users/' . $old;
+                $oldPath = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_USERS . $old;
                 if (is_file($oldPath) && $old !== $fileName) {
                     unlink($oldPath);
                 }
             }
 
             //On met à jour la piucture dand le dossier assets/users.
-            $uploadDir = dirname(__DIR__, 2) . '/assets/users/';
+            $uploadDir = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_USERS;
             if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true)) {
                 throw new \Exception("Impossible de créer le dossier upload.");
             }
@@ -241,7 +241,7 @@ namespace App\Controllers {
             $targetPath = $uploadDir . $fileName;
 
             if (!move_uploaded_file($tmp, $targetPath)) {
-                exit('Erreur upload');
+                throw new \Exception('Erreur upload');
             }
 
             // On redirige vers la page mon compte.

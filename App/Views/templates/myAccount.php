@@ -63,7 +63,7 @@
                 <tbody>
                     <?php foreach ($books as $book): ?>
                         <tr>
-                            <td class="my-account-books-table-image"><img src=<?= BOOK_IMAGE_BASE_URL_IMAGES . $book->getPictureUri() ?> alt="photo du livre" width="64" height="64"></td>
+                            <td class="my-account-books-table-image"><img src=<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?> alt="photo du livre" width="64" height="64"></td>
                             <td><?= $book->getTitle() ?></td>
                             <td><?= $book->getAuthor() ?></td>
                             <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>
