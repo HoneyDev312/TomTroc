@@ -61,24 +61,33 @@
                 </thead>
 
                 <tbody>
-                    <?php foreach ($books as $book): ?>
+                    <?php if (empty($books)): ?>
                         <tr>
-                            <td class="my-account-books-table-image"><img src=<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?> alt="photo du livre" width="64" height="64"></td>
-                            <td><?= $book->getTitle() ?></td>
-                            <td><?= $book->getAuthor() ?></td>
-                            <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>
-                            <td>
-                                <span class="my-account-books-table-image-tag 
-                                <?= $book->getAvailability() ? "available" : "unavailable" ?>">
-                                    <?= $book->getAvailability() ? "disponible" : "non-dispo." ?>
-                                </span>
-                            </td>
-                            <td class="my-account-books-table-action">
-                                <a href="/edit-book/<?= (int) $book->getId() ?>">Éditer</a>
-                                <a class="delete" href="/delete-book/<?= (int)$book->getId() ?>/<?= (int)$user->getId() ?>">Supprimer</a>
+                            <td colspan="6" class="my-account-books-empty">
+                                Pas de livre enregistré pour le moment
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php else: ?>
+                        <?php foreach ($books as $book): ?>
+                            <tr>
+                                <td class="my-account-books-table-image"><img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?>" alt="photo du livre" width="64" height="64"></td>
+                                <td><?= $book->getTitle() ?></td>
+                                <td><?= $book->getAuthor() ?></td>
+                                <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>
+                                <td>
+                                    <span class="my-account-books-table-image-tag 
+                                <?= $book->getAvailability() ? "available" : "unavailable" ?>">
+                                        <?= $book->getAvailability() ? "disponible" : "non-dispo." ?>
+                                    </span>
+                                </td>
+                                <td class="my-account-books-table-action">
+                                    <a href="/edit-book/<?= (int) $book->getId() ?>">Éditer</a>
+                                    <a class="delete" href="/delete-book/<?= (int)$book->getId() ?>/<?= (int)$user->getId() ?>">Supprimer</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif ?>
+
                 </tbody>
             </table>
 

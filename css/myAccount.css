@@ -246,3 +246,7 @@ tbody tr:last-child td:first-child {
   color: var(--color-danger);
   margin-left: var(--space-8);
 }
+
+.my-account-books-empty {
+  text-align: center;
+}
