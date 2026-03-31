@@ -1,0 +1,15 @@
+.error-page {
+  display: flex;
+  min-height: calc(100dvh - var(--header-h) - var(--footer-h));
+}
+
+.error-content {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-32);
+}
+
+.error-page h1 {
+  font-size: calc(2 * var(--font-size-h1));
+}

@@ -60,7 +60,7 @@ namespace App\Controllers {
             $bookId = (int) $id;
 
             if ($bookId <= 0) {
-                throw new \RuntimeException('ID livre invalide');
+                throw new \RuntimeException("Le livre demandé n'existe pas");
             }
 
             $bookManager = new BookManager();

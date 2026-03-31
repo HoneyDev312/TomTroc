@@ -1,3 +1,9 @@
+<?php
+$redirect = isset($_SESSION['userId'])
+    ? '/messaging/' . (int) $_SESSION['userId'] . '/' . (int) $book->getOwnerId()
+    : '/signin';
+?>
+
 <div class="book-header">
     <div class="container">
         <a href="/our-books">Nos livres</a> > <span><?= $book->getTitle() ?></span>
@@ -22,7 +28,7 @@
                 <div class="owner-picture"></div>
                 <p><?= $book->getOwnername() ?></p>
             </a>
-            <a href="/messaging/<?= $_SESSION["userId"] ?>/<?= $book->getOwnerId() ?>" class="btn btn-filled">
+            <a href="<?= $redirect ?>" class="btn btn-filled">
                 Envoyer un message
             </a>
         </div>

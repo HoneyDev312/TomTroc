@@ -1,3 +1,9 @@
+<?php
+$redirect = isset($_SESSION['userId'])
+    ? '/messaging/' . (int) $_SESSION['userId'] . '/' . (int) $user->getId()
+    : '/signin';
+?>
+
 <div class="my-account-wrapper">
     <div class="my-account-content container">
         <div class="my-account-informations flex">
@@ -14,7 +20,7 @@
                         src="<?= BOOK_IMAGE_BASE_URL_SVG . "books.svg" ?>" alt="" />
                     <?= count($books) ?> livres
                 </span>
-                <a href="/messaging/<?= $_SESSION["userId"] ?>/<?= $user->getId() ?>" class="btn btn-outlined">Écrire un message</a>
+                <a href="<?= $redirect ?>" class="btn btn-outlined">Écrire un message</a>
             </div>
             <div class="my-account-informations-box flex right">
 

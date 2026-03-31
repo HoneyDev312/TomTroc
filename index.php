@@ -10,6 +10,8 @@ require_once 'config/config.php';
 require_once 'config/autoloader.php';
 
 use App\Core\Router;
+use App\Services\Utils;
+use App\Controllers\ErrorController;
 
 // Instanciation du Router
 $router = new Router();
@@ -18,7 +20,10 @@ $router = new Router();
 require_once 'public/routes.php';
 try {
     $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+} catch (\RuntimeException $e) {
+    Utils::logException($e);
+    (new ErrorController())->render(404, $e->getMessage());
 } catch (\Throwable $e) {
-    http_response_code(404);
-    echo $e->getMessage();
+    Utils::logException($e);
+    (new ErrorController())->render(500, $e->getMessage());
 }
