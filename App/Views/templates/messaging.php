@@ -24,7 +24,7 @@ if ($hasMessages) {
                 </div>
             <?php else: ?>
                 <?php foreach ($conversations as $conversation): ?>
-                    <a href="/messaging/<?= $_SESSION["userId"] ?>/<?= $conversation->getOtherUserId() ?>" class="messaging-list-item flex <?= $conversation->getOtherUserId() === $messages[0]->getOtherUserId() ? "selected" : '' ?> ">
+                    <a href="/messaging/<?= $_SESSION["userId"] ?>/<?= $conversation->getOtherUserId() ?>" class="messaging-list-item flex <?= ($activeMessage && $conversation->getOtherUserId() === $activeMessage->getOtherUserId()) ? 'selected' : '' ?>">
                         <div class="messaging-list-avatar">
                             <?php if ($conversation->getOtherPictureUri() !== null): ?>
                                 <img
@@ -76,7 +76,7 @@ if ($hasMessages) {
                                 <?php if ($message->getSenderId() !== $_SESSION["userId"]): ?>
                                     <div class="messaging-thread-avatar">
                                         <?php if ($message->getOtherPictureUri() !== null): ?>
-                                            <img class="messaging-img-content" src="<?= BOOK_IMAGE_BASE_URL_USERS . htmlspecialchars($messages[0]->getOtherPictureUri()) ?>" alt="">
+                                            <img class="messaging-img-content" src="<?= BOOK_IMAGE_BASE_URL_USERS . htmlspecialchars($message->getOtherPictureUri()) ?>" alt="">
                                         <?php else: ?>
                                             <p>PAS DE PHOTO</p>
                                         <?php endif; ?>
@@ -95,7 +95,7 @@ if ($hasMessages) {
                     <form action="/send-message" class="messaging-thread-form" method="post">
                         <input type="hidden" name="senderId" value="<?= (int) $_SESSION['userId'] ?>">
                         <input type="hidden" name="receiverId" value="<?= $receiverId ?>">
-                        <input type="text" name="content" placeholder="Tapez votre texte ici">
+                        <input type="text" name="content" placeholder="Tapez votre texte ici" autocomplete="off">
                         <button type="submit" class="btn btn-filled">Envoyer</button>
                     </form>
                 </div>

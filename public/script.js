@@ -2,7 +2,8 @@ const input = document.getElementById("pictureFile");
 const form = document.getElementById("update-picture-form");
 const searchInput = document.querySelector(".ourBooks-search");
 const searchForm = document.querySelector(".ourBooks-form");
-console.log(searchForm);
+const thread = document.querySelector(".messaging-thread-content");
+const messagingForm = document.querySelector(".messaging-thread-form");
 
 //Upload user and book picture
 if (input && form) {
@@ -23,3 +24,14 @@ if (searchInput && searchForm) {
     }
   });
 }
+
+function scrollToBottom() {
+  if (!thread) return;
+  thread.scrollTop = thread.scrollHeight;
+}
+
+window.addEventListener("load", scrollToBottom);
+
+messagingForm?.addEventListener("submit", () => {
+  scrollToBottom();
+});
