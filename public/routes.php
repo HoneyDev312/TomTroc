@@ -27,7 +27,11 @@ $route = $router->get('search-book', [BooksController::class, 'searchBooks'])->n
 
 $route = $router->get('delete-book/{bookId}/{userId}', [BooksController::class, 'deleteBook'])->name('book.delete');
 
-$route = $router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.show');
+$router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.index');
+
+$route = $router->get('messaging/{id}/{otherId}', [MessageController::class, 'showMessaging'])->name('messaging.show');
+
+$route = $router->post('send-message', [MessageController::class, 'sendMessage'])->name('messaging.send');
 
 $route = $router->get('signin', [AccountController::class, 'showSignIn'])->name('signin.show');
 

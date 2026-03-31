@@ -11,26 +11,34 @@ namespace App\Models\Managers {
     class MessageManager extends AbstractEntityManager
     {
 
-        /**
-         * Récupère tous les messages reçus ou envoyés par id.
-         * @param int : un id de user
-         * @return array : un tableau d'objets Message.
-         */
-        public function getMessagesById(int $id): array
+        public function getMessagesById(int $id, int $otherId): array
         {
             $sql = "SELECT
-                    m.*, m.message_id AS id
-                    FROM message m
-                    WHERE sender_id = :id
-                    OR receiver_id = :id
-                    ORDER BY created_at DESC";
+                m.*,
+                m.message_id AS id,
+                u.user_id AS other_user_id,
+                u.username AS other_username,
+                u.picture_uri AS other_picture_uri
+            FROM message m
+            JOIN user u
+              ON u.user_id = CASE
+                    WHEN m.sender_id = :id THEN m.receiver_id
+                    ELSE m.sender_id
+                 END
+            WHERE (m.sender_id = :id AND m.receiver_id = :other_id)
+               OR (m.sender_id = :other_id AND m.receiver_id = :id)
+            ORDER BY m.created_at ASC, m.message_id ASC";
 
-            $result = $this->db->query($sql, ['id' => $id]);
+            $result = $this->db->query($sql, [
+                'id' => $id,
+                'other_id' => $otherId
+            ]);
+
             $messages = [];
-
-            while ($message = $result->fetch()) {
-                $messages[] = new Message($message);
+            while ($row = $result->fetch()) {
+                $messages[] = new Message($row);
             }
+
             return $messages;
         }
 
@@ -39,12 +47,13 @@ namespace App\Models\Managers {
          * @param int : un id de user
          * @return array : un objet Message ou null.
          */
-        public function getLastMessagesById(int $id): array
+        public function getConversationsById(int $id): array
         {
             $sql = "SELECT 
                         m.*,
                         u.user_id AS other_user_id,
-                        u.username AS other_username
+                        u.username AS other_username,
+                        u.picture_uri AS other_picture_uri
                     FROM message m
                     JOIN (
                         SELECT
@@ -66,12 +75,33 @@ namespace App\Models\Managers {
 
             $result = $this->db->query($sql, ['user_id' => $id]);
 
-            $messages = [];
+            $conversations = [];
             while ($row = $result->fetch()) {
-                $messages[] = new Message($row);
+                $conversations[] = new Message($row);
             }
 
-            return $messages;
+            return $conversations;
+        }
+
+        /**
+         * Ajoute un message.
+         * @param Message $message : le message à ajouter.
+         * @return void
+         */
+        public function sendMessage(Message $message): ?int
+        {
+            $sql = "INSERT INTO message ( content, sender_id, receiver_id) VALUES (:content, :sender_id, :receiver_id)";
+
+            $statement = $this->db->query($sql, [
+                'content' => $message->getContent(),
+                'sender_id' => $message->getSenderId(),
+                'receiver_id' => $message->getReceiverId()
+            ]);
+
+            if ($statement->rowCount() > 0) {
+                return (int) $this->db->getPDO()->lastInsertId();
+            }
+            return null;
         }
     }
 }

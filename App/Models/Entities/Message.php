@@ -13,7 +13,9 @@ namespace App\Models\Entities {
         private int $senderId;
         private int $receiverId;
         private \DateTimeImmutable $createdAt;
-        private string $otherUsername;
+        private ?int $otherUserId = null;
+        private ?string $otherUsername = null;
+        private ?string $otherPictureUri = null;
 
 
         /**
@@ -32,6 +34,24 @@ namespace App\Models\Entities {
         public function getContent(): string
         {
             return $this->content;
+        }
+
+        /**
+         * Retourne les N premiers mots du contenu + "..." si coupé.
+         */
+        public function getContentExcerpt(int $wordLimit = 4): string
+        {
+            $text = trim($this->content);
+            if ($text === '') {
+                return '';
+            }
+
+            $words = preg_split('/\s+/', $text) ?: [];
+            if (count($words) <= $wordLimit) {
+                return $text;
+            }
+
+            return implode(' ', array_slice($words, 0, $wordLimit)) . '...';
         }
 
         /**
@@ -94,10 +114,45 @@ namespace App\Models\Entities {
         }
 
         /**
-         * Setter pour le otherUsername.
-         * @param string $otherUsername
+         * Getter formaté heure:minute (H:i).
+         * @return string
          */
-        public function setOtherUsername(string $otherUsername): void
+        public function getCreatedAtHourMinute(): string
+        {
+            return $this->createdAt->format('H:i');
+        }
+
+        /**
+         * Getter formaté jour.mois heure:minute (ex: 27.03 14:25).
+         */
+        public function getCreatedAtDayMonthHourMinute(): string
+        {
+            return $this->createdAt->format('d.m H:i');
+        }
+
+        /**
+         * Setter pour le otherId.
+         * @param ?string $otherId
+         */
+        public function setOtherUserId(?string $otherUserId): void
+        {
+            $this->otherUserId = $otherUserId;
+        }
+
+        /**
+         * Getter pour le otherUserId.
+         * @return ?int
+         */
+        public function getOtherUserId(): ?int
+        {
+            return $this->otherUserId;
+        }
+
+        /**
+         * Setter pour le otherUsername.
+         * @param ?string $otherUsername
+         */
+        public function setOtherUsername(?string $otherUsername): void
         {
             $this->otherUsername = $otherUsername;
         }
@@ -106,9 +161,27 @@ namespace App\Models\Entities {
          * Getter pour le otherUsername.
          * @return string
          */
-        public function getOtherUsername(): string
+        public function getOtherUsername(): ?string
         {
             return $this->otherUsername;
+        }
+
+        /**
+         * Setter pour le otherPictureUri.
+         * @param string $otherPictureUri
+         */
+        public function setOtherPictureUri(?string $otherPictureUri): void
+        {
+            $this->otherPictureUri = $otherPictureUri;
+        }
+
+        /**
+         * Getter pour le otherPictureUri.
+         * @return ?string
+         */
+        public function getOtherPictureUri(): ?string
+        {
+            return $this->otherPictureUri;
         }
     }
 }
