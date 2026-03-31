@@ -7,7 +7,7 @@ namespace App\Controllers {
     use App\Models\Managers\BookManager;
     use App\Services\Utils;
 
-    class BooksController
+    class BooksController extends AbstractController
     {
         /**
          * Affiche la page d'accueil.
@@ -28,6 +28,9 @@ namespace App\Controllers {
          */
         public function showOurBooks(): void
         {
+
+            $this->checkIfUserIsConnected();
+
             $bookManager = new BookManager();
             $books = $bookManager->getAllBooks();
 
@@ -57,6 +60,8 @@ namespace App\Controllers {
          */
         public function showBook(string $id): void
         {
+            $this->checkIfUserIsConnected();
+
             $bookId = (int) $id;
 
             if ($bookId <= 0) {
@@ -80,6 +85,8 @@ namespace App\Controllers {
          */
         public function showEditBook(string $id): void
         {
+            $this->checkIfUserIsConnected();
+
             $bookId = $id;
 
             $bookManager = new BookManager();
@@ -95,6 +102,7 @@ namespace App\Controllers {
          */
         public function updateBook(): void
         {
+            $this->checkIfUserIsConnected();
 
             // On récupère les données du formulaire POST.
             $id = Utils::request("id");
@@ -132,6 +140,8 @@ namespace App\Controllers {
          */
         public function updateBookPicture(): void
         {
+
+            $this->checkIfUserIsConnected();
 
             // On récupère les données du formulaire.
             $id = Utils::request("id");
@@ -181,6 +191,9 @@ namespace App\Controllers {
          */
         public function deleteBook(string $book_id, string $user_id): void
         {
+
+            $this->checkIfUserIsConnected();
+
             // On récupère les params dans l'url GET.
             $bookId = (int) $book_id;
             $userId = (int) $user_id;
