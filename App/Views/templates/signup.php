@@ -1,4 +1,3 @@
-<div class="connect-wrapper">
     <div class="connect-content container flex">
         <div class="form-wrapper">
             <h1>Connexion</h1>
@@ -14,5 +13,6 @@
             </form>
         </div>
         <div class="connect-picture">
+            <img src="<?= BOOK_IMAGE_BASE_URL_IMAGES . "bookstore.jpg" ?>" alt="">
         </div>
     </div>

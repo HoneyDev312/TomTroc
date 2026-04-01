@@ -1,27 +1,23 @@
-.connect-wrapper {
-  height: calc(100dvh - var(--header-h) - var(--footer-h));
-  background-color: var(--color-bg-secondary);
-}
-
 .connect-content {
-  height: inherit;
+  height: 100%;
+  overflow: hidden;
+  justify-content: space-between;
 }
 
 .form-wrapper {
   display: flex;
-  flex-direction: column;
   flex: 1;
-  height: inherit;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 9rem;
+  padding-left: calc(2 * var(--space-48));
 }
 
 .form-connect {
   width: 20rem;
   display: flex;
   flex-direction: column;
-  margin-top: var(--space-56);
+  overflow: hidden;
 }
 
 .form-connect > label {
@@ -62,15 +58,43 @@
 .connect-picture {
   display: flex;
   flex: 1;
-  height: inherit;
-  background-image: url("/assets/images/bookstore.jpg");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
+.connect-picture > img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
 }
+
+@media (max-width: 1023px) {
+  .connect-content {
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-bottom: var(--footer-h-mobile);
+  }
+
+  .form-wrapper {
+    margin: var(--space-48) 0;
+    padding-left: 0;
+  }
+
+  .connect-picture {
+    height: 30rem;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1024px) {
+  .form-wrapper {
+    padding-left: var(--space-48);
+  }
 }
+
 @media (min-width: 1280px) {
+  .form-wrapper {
+    padding-left: calc(2 * var(--space-48));
+  }
 }
