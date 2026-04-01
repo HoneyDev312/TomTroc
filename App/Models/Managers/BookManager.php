@@ -61,7 +61,10 @@ namespace App\Models\Managers {
         public function getBookById(int $id): ?Book
         {
             $sql = "SELECT
-                    b.*, b.book_id AS id,u.username AS ownername
+                    b.*, 
+                    b.book_id AS id,
+                    u.username AS ownername,
+                    u.picture_uri AS ownerPictureUri
                     FROM book b
                     INNER JOIN user u ON u.user_id = b.owner_id
                     WHERE book_id = :id";

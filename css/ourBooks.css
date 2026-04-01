@@ -31,7 +31,7 @@
 }
 
 .ourBooks-content {
-  padding: calc(2 * var(--space-40)) calc(4 * var(--space-40));
+  padding: calc(2 * var(--space-40)) calc(6 * var(--space-40));
 }
 
 .ourBooks-grid {
@@ -69,9 +69,20 @@
 }
 
 @media (min-width: 1024px) {
+  .ourBooks-content {
+    padding: calc(2 * var(--space-40)) calc(2 * var(--space-40));
+  }
+
   .ourBooks-grid {
     grid-template-columns: repeat(3, 12.5rem);
     row-gap: var(--space-32);
-    column-gap: var(--space-16);
+    column-gap: var(--space-32);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ourBooks-content {
+    padding: calc(2 * var(--space-40)) calc(4 * var(--space-40));
   }
 }

@@ -17,7 +17,7 @@ namespace App\Models\Entities {
         private int $ownerId;
         private \DateTimeImmutable $createdAt;
         private string $ownername;
-
+        private string $ownerPictureUri;
 
         /**
          * Setter pour le title.
@@ -183,6 +183,24 @@ namespace App\Models\Entities {
         public function getOwnername(): string
         {
             return $this->ownername;
+        }
+
+        /**
+         * Setter pour le ownerPictureUri.
+         * @param string $ownerPictureUri
+         */
+        public function setOwnerPictureUri(?string $ownerPictureUri): void
+        {
+            $this->ownerPictureUri = $ownerPictureUri;
+        }
+
+        /**
+         * Getter pour le ownerPictureUri.
+         * @return ?string
+         */
+        public function getOwnerPictureUri(): ?string
+        {
+            return $this->ownerPictureUri;
         }
     }
 }

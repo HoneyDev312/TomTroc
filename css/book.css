@@ -1,5 +1,5 @@
 .book-wrapper {
-  height: calc(100dvh - var(--header-h) - var(--footer-h));
+  min-height: calc(100dvh - var(--header-h) - var(--footer-h));
   flex-direction: column;
 }
 
@@ -70,8 +70,16 @@
 .owner-picture {
   height: 3rem;
   width: 3rem;
+  justify-content: center;
   border-radius: var(--radius-pill);
-  background-color: var(--color-brand-primary);
+  overflow: hidden;
+}
+
+.owner-picture > img {
+  height: 3rem;
+  width: 3rem;
+  object-fit: cover;
+  display: block;
 }
 
 .book-informations > .btn {
@@ -80,9 +88,36 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
+  .book-header {
+    display: none;
+  }
+
+  .book-content {
+    flex-direction: column;
+    padding-bottom: calc(var(--space-40) + var(--footer-h-mobile));
+  }
+
+  .book-informations {
+    margin-top: var(--space-40);
+  }
+
+  .book-informations > .btn {
+    margin-top: var(--space-40);
+  }
 }
+
 @media (min-width: 1024px) {
+  .book-informations > .btn {
+    margin-top: var(--space-40);
+  }
+  .book-content {
+    padding-bottom: var(--footer-h);
+  }
 }
+
 @media (min-width: 1280px) {
+  .book-content {
+    padding-bottom: var(--footer-h);
+  }
 }

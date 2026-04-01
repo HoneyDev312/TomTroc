@@ -25,7 +25,10 @@ $redirect = isset($_SESSION['userId'])
             <div class="separator"></div>
             <p class="book-subtitle">PROPRIÉTAIRE</p>
             <a href="/public-account/<?= $book->getOwnerId() ?>" class="owner-wrapper flex">
-                <div class="owner-picture"></div>
+                <div class="owner-picture">
+                    <img
+                        src="<?= BOOK_IMAGE_BASE_URL_USERS . htmlspecialchars($book->getOwnerPictureUri()) ?>" alt="" />
+                </div>
                 <p><?= $book->getOwnername() ?></p>
             </a>
             <a href="<?= $redirect ?>" class="btn btn-filled">
