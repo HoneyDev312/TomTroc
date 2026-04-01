@@ -16,9 +16,11 @@
   font-weight: var(--light);
 }
 
-@media (min-width: 768px) {
-}
-@media (min-width: 1024px) {
-}
-@media (min-width: 1280px) {
+@media (max-width: 1023px) {
+  .footer-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: var(--space-24) var(--space-48);
+    gap: var(--space-16);
+  }
 }
