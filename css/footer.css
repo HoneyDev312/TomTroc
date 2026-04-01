@@ -19,8 +19,8 @@
 @media (max-width: 1023px) {
   .footer-wrapper {
     flex-direction: column;
-    height: auto;
-    padding: var(--space-24) var(--space-48);
+    justify-content: center;
+    height: var(--footer-h-mobile);
     gap: var(--space-16);
   }
 }

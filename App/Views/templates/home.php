@@ -5,7 +5,7 @@
         <div class="left-content flex">
             <h1>Rejoignez nos<br>lecteurs passionnés</h1>
             <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons en la magie du partage de connaissances et d'histoires à<br>travers les livres. </p>
-            <a href="/our-books" class="btn btn-filled">
+            <a href="/our-books" class="discover-btn btn btn-filled">
                 Découvrir
             </a>
         </div>
@@ -42,7 +42,7 @@
                 </a>
             <?php endforeach ?>
         </div>
-        <a href="/our-books" class="btn btn-filled">
+        <a href="/our-books" class="books-btn btn btn-filled">
             Voir tous les livres
         </a>
     </div>
@@ -69,7 +69,7 @@
                 <p>Proposez un échange et discutez avec d'autres passionnés de lecture.</p>
             </div>
         </div>
-        <a href="/our-books" class="btn btn-outlined">
+        <a href="/our-books" class="help-btn btn btn-outlined">
             Voir tous les livres
         </a>
     </div>

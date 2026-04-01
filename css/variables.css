@@ -3,6 +3,7 @@
   --header-h: 5rem;
   --footer-h: 3.75rem;
   --header-mobile-h: 3.5rem;
+  --footer-h-mobile: 12rem;
 
   /* Colors */
   --color-bg-primary: #f5f3ef;
@@ -36,6 +37,8 @@
   --font-size-24: 1.5rem;
   --font-size-h1: 2.25rem;
   --font-size-h2: 2rem;
+  --font-size-h1-mobile: 1.875rem;
+  --font-size-h2-mobile: 2rem;
   --bold: 700;
   --semibold: 600;
   --regular: 400;
