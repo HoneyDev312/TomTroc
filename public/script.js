@@ -30,8 +30,20 @@ function scrollToBottom() {
   thread.scrollTop = thread.scrollHeight;
 }
 
+// Scroll en bas de la conversation après l'envoir d'un message
 window.addEventListener("load", scrollToBottom);
 
 messagingForm?.addEventListener("submit", () => {
   scrollToBottom();
 });
+
+// toggle du burger menu en mobile
+const toggle = document.querySelector(".nav-toggle-menu");
+const mobileMenu = document.querySelector(".nav-mobile-menu");
+
+if (toggle && mobileMenu) {
+  toggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}

@@ -73,6 +73,7 @@ h2 {
   border-bottom-right-radius: var(--radius-12);
   padding-bottom: var(--space-24);
   position: relative;
+  z-index: 999;
 }
 
 .card-img {
@@ -122,11 +123,14 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  /* tablette */
 }
 @media (min-width: 1024px) {
-  /* laptop */
+  .container {
+    max-width: 1024px;
+  }
 }
 @media (min-width: 1280px) {
-  /* desktop */
+  .container {
+    max-width: 1280px;
+  }
 }

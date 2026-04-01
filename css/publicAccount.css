@@ -143,3 +143,10 @@ th.my-account-books-table-image {
   padding-right: calc(2 * var(--space-32));
   font-style: italic;
 }
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {
+}

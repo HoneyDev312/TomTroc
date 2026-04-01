@@ -250,3 +250,10 @@ tbody tr:last-child td:first-child {
 .my-account-books-empty {
   text-align: center;
 }
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {
+}

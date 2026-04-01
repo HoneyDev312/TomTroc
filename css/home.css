@@ -118,3 +118,16 @@ section {
   color: var(--color-text-secondary);
   font-style: italic;
 }
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+  .card-wrapper {
+    padding: 0 calc(2 * var(--space-40));
+  }
+}
+@media (min-width: 1280px) {
+  .card-wrapper {
+    padding: 0 calc(4 * var(--space-40));
+  }
+}
