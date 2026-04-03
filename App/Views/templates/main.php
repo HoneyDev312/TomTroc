@@ -63,17 +63,19 @@
                                 <span>Mon compte</span>
                             </a>
                         </li>
-                    <?php endif ?>
-                    <?php if (!isset($_SESSION['user'])) : ?>
+
+                        <li>
+                            <a href="/logout">Déconnexion</a>
+                        </li>
+
+                    <?php else : ?>
+
                         <li>
                             <a href="/signin" class="link-connection flex">
                                 <span>Connexion</span>
                             </a>
                         </li>
-                    <?php else: ?>
-                        <li>
-                            <a href="/logout">Déconnexion</a>
-                        </li>
+
                     <?php endif ?>
                 </ul>
 
@@ -89,9 +91,13 @@
                 <ul class="nav-mobile-menu">
                     <li><a href="/">Accueil</a></li>
                     <li><a href="/our-books">Nos livres à l’échange</a></li>
-                    <li><a href="/messaging/<?= (int) $_SESSION['userId'] ?>">Messagerie</a></li>
-                    <li><a href="/my-account/<?= (int) $_SESSION['userId'] ?>">Mon compte</a></li>
-                    <li><a href="/signin">Connexion</a></li>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <li><a href="/messaging/<?= (int) $_SESSION['userId'] ?>">Messagerie</a></li>
+                        <li><a href="/my-account/<?= (int) $_SESSION['userId'] ?>">Mon compte</a></li>
+                        <li><a href="/logout">Déconnexion</a></li>
+                    <?php else : ?>
+                        <li><a href="/signin">Connexion</a></li>
+                    <?php endif ?>
                 </ul>
 
             </div>

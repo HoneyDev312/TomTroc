@@ -136,6 +136,7 @@ nav {
     display: none;
   }
 }
+
 @media (min-width: 1024px) {
   .logo-link {
     gap: var(--space-12);
@@ -157,8 +158,19 @@ nav {
     padding: 0 var(--space-48);
   }
 }
+
 @media (min-width: 1280px) {
   .nav-wrapper {
     padding: 0 calc(2 * var(--space-48));
+  }
+
+  .link-wrapper {
+    gap: var(--space-48);
+    margin-left: var(--space-48);
+  }
+
+  .account-wrapper {
+    gap: var(--space-56);
+    padding-left: var(--space-56);
   }
 }

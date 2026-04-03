@@ -196,6 +196,9 @@ section {
   .card-wrapper {
     padding: 0 calc(2 * var(--space-40));
   }
+  .rules-wrapper {
+    gap: 0 var(--space-16);
+  }
 }
 @media (min-width: 1280px) {
   .card-wrapper {
