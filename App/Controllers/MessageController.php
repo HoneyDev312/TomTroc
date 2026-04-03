@@ -19,7 +19,7 @@ namespace App\Controllers {
 
             // On récupère l'id.
             $userId = (int) $id;
-            $otherUserId = $otherId !== null ? (int)$otherId : 0;
+            $otherUserId = $otherId !== null ? (int)$otherId : null;
 
 
             if ($userId <= 0) {
@@ -39,8 +39,18 @@ namespace App\Controllers {
                 $messages = $messageManager->getMessagesById($userId, $otherUserId);
             }
 
+            $pageMode = $otherUserId === null ? 'list' : 'thread';
+
             $view = new View("Messagerie", "messaging");
-            $view->render("messaging", ["conversations" => $conversations, "messages" => $messages, "otherId" => $otherUserId]);
+            $view->render(
+                "messaging",
+                [
+                    "conversations" => $conversations,
+                    "messages" => $messages,
+                    "otherId" => $otherUserId,
+                    "pageMode" => $pageMode,
+                ]
+            );
         }
 
         /**
@@ -80,7 +90,7 @@ namespace App\Controllers {
             }
 
             // On redirige vers la page mon compte.
-            Utils::redirect("messaging.show", ["id" => $senderId, "otherId" => $receiverId]);
+            Utils::redirect("messaging.thread", ["id" => $senderId, "otherId" => $receiverId]);
         }
     }
 }

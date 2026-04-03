@@ -10,7 +10,10 @@
   padding-bottom: 100px;
 }
 
-.my-account-content > h1 {
+.my-account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-top: calc(2 * var(--space-48));
   margin-bottom: var(--space-48);
 }
@@ -268,9 +271,12 @@ tbody tr:last-child td:first-child {
     overflow: auto;
   }
 
-  .my-account-content > h1 {
+  .my-account-header {
+    flex-direction: column;
+    align-items: flex-start;
     padding-top: var(--space-48);
     margin-bottom: var(--space-48);
+    gap: var(--space-16);
   }
 
   .my-account-informations {

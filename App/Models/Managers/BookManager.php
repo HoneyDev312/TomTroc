@@ -124,6 +124,24 @@ namespace App\Models\Managers {
         }
 
         /**
+         * Ajoute un Book.
+         * @param Book $book : le book à modifier.
+         * @return void
+         */
+        public function addBook(Book $book): void
+        {
+            $sql = "INSERT INTO book (title, author, description, availability, owner_id ) VALUES (:title, :author,:description, :availability, :ownerId)";
+
+            $this->db->query($sql, [
+                'title' => $book->getTitle(),
+                'author' => $book->getAuthor(),
+                'description' => $book->getDescription(),
+                'availability' => $book->getAvailability(),
+                'ownerId' => $book->getOwnerId()
+            ]);
+        }
+
+        /**
          * Modifie un Book.
          * @param Book $book : le book à modifier.
          * @return void

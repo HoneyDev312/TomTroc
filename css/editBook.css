@@ -40,6 +40,10 @@
   width: 30rem;
   height: 30rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-brand-primary);
 }
 
 .update-book-image-wrapper > img {
@@ -187,6 +191,7 @@
     width: 100%;
   }
 }
+
 @media (min-width: 1024px) {
   .update-book-content {
     padding: 0 var(--space-48);

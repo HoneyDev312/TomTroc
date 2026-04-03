@@ -20,12 +20,9 @@
 }
 
 .messaging-list {
+  display: flex;
   min-height: 0;
   overflow-y: auto;
-}
-
-.messaging-list {
-  display: flex;
   flex-direction: column;
   height: 100%;
   flex: 0 0 19rem;
@@ -198,9 +195,114 @@
   border: none;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
+  .messaging-content {
+    padding: 0;
+  }
+
+  .is-list-page .messaging-thread {
+    display: none;
+  }
+
+  .is-thread-page .messaging-list {
+    display: none;
+  }
+
+  .messaging-list {
+    flex: 1;
+  }
+
+  .messaging-list-item {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-border-light);
+  }
+
+  .selected {
+    background: none;
+  }
+
+  .messaging-thread {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1 1 auto;
+    padding: 0 var(--space-16);
+  }
+
+  .messaging-thread-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 0 var(--space-16);
+    background-color: var(--color-bg-primary);
+  }
+
+  .messaging-thread-content {
+    padding-top: var(--space-48);
+    padding-bottom: var(--footer-h-mobile);
+  }
+
+  .messaging-thread-input {
+    display: flex;
+    flex: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 0 var(--space-16);
+    bottom: calc(2 * var(--space-48));
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  .messaging-thread-form {
+    height: unset;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 0;
+    align-items: unset;
+  }
 }
+
 @media (min-width: 1024px) {
+  .is-list-page .messaging-thread {
+    display: initial;
+  }
+
+  .is-thread-page .messaging-list {
+    display: initial;
+  }
 }
+
+@media (min-width: 1024px) {
+  .messaging-content {
+    padding: 0 var(--space-48);
+    padding-bottom: calc(var(--space-24));
+  }
+
+  .messaging-thread {
+    padding: var(--space-24) 0 var(--space-32) var(--space-32);
+  }
+
+  .messaging-thread-form {
+    margin-top: var(--space-32);
+  }
+}
+
 @media (min-width: 1280px) {
+  .messaging-content {
+    padding: 0 calc(2 * var(--space-48));
+    padding-bottom: calc(var(--space-24));
+  }
+
+  .messaging-thread {
+    padding: var(--space-24) 0 calc(2 * var(--space-32)) var(--space-32);
+  }
+
+  .messaging-thread-form {
+    margin-top: var(--space-48);
+  }
 }

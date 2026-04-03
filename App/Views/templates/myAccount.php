@@ -1,6 +1,9 @@
 <div class="my-account-wrapper">
     <div class="my-account-content container">
-        <h1>Mon compte</h1>
+        <div class="my-account-header">
+            <h1>Mon compte</h1>
+            <a href="/edit-book" class="my-account-add-book btn btn-outlined">Ajouter un Livre</a>
+        </div>
         <div class="my-account-informations flex">
             <div class="my-account-informations-box flex left">
                 <div class="my-account-avatar flex">

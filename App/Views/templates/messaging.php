@@ -15,7 +15,7 @@ if ($hasMessages) {
 ?>
 
 <div class="messaging-wrapper">
-    <div class="messaging-content container">
+    <div class="messaging-content <?= $pageMode === 'thread' ? 'is-thread-page' : 'is-list-page' ?> container">
         <aside class="messaging-list">
             <h1>Messagerie</h1>
             <?php if (!$hasConversations): ?>
