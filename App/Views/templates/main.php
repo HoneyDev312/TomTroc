@@ -24,7 +24,10 @@
             <div class="nav-wrapper container flex">
                 <a href="/" class="logo-link">
                     <div class="logo-wrapper">
-                        <img src="/assets/svg/logo_white.svg" alt="Logo Tom Troc">
+                        <picture>
+                            <source media="(max-width: 1023px)" srcset="/assets/svg/logo_white_mobile.svg">
+                            <img src="/assets/svg/logo_white.svg" alt="Logo Tom Troc">
+                        </picture>
                     </div>
                     <span class="logo-text">Tom Troc</span>
                 </a>
@@ -60,17 +63,40 @@
                                 <span>Mon compte</span>
                             </a>
                         </li>
-                    <?php endif ?>
-                    <?php if (!isset($_SESSION['user'])) : ?>
+
+                        <li>
+                            <a href="/logout">Déconnexion</a>
+                        </li>
+
+                    <?php else : ?>
+
                         <li>
                             <a href="/signin" class="link-connection flex">
                                 <span>Connexion</span>
                             </a>
                         </li>
-                    <?php else: ?>
-                        <li>
-                            <a href="/logout">Déconnexion</a>
-                        </li>
+
+                    <?php endif ?>
+                </ul>
+
+                <button
+                    class="nav-toggle-menu"
+                    aria-label="Ouvrir le menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    type="button">
+                    <img src="/assets/svg/menu.svg" alt="menu">
+                </button>
+
+                <ul class="nav-mobile-menu">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/our-books">Nos livres à l’échange</a></li>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <li><a href="/messaging/<?= (int) $_SESSION['userId'] ?>">Messagerie</a></li>
+                        <li><a href="/my-account/<?= (int) $_SESSION['userId'] ?>">Mon compte</a></li>
+                        <li><a href="/logout">Déconnexion</a></li>
+                    <?php else : ?>
+                        <li><a href="/signin">Connexion</a></li>
                     <?php endif ?>
                 </ul>
 

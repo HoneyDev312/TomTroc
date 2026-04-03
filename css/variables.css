@@ -2,6 +2,8 @@
   /* Header & Footer */
   --header-h: 5rem;
   --footer-h: 3.75rem;
+  --header-mobile-h: 3.5rem;
+  --footer-h-mobile: 12rem;
 
   /* Colors */
   --color-bg-primary: #f5f3ef;
@@ -15,6 +17,7 @@
   --color-border-primary: #f0f0f0;
   --color-border-secondary: #a6a6a6;
   --color-border-tertiary: #f5f3ef;
+  --color-border-light: #ffffff;
   --color-input-primary: #edf2f6;
 
   --color-brand-primary: #00ac66;
@@ -35,6 +38,8 @@
   --font-size-24: 1.5rem;
   --font-size-h1: 2.25rem;
   --font-size-h2: 2rem;
+  --font-size-h1-mobile: 1.875rem;
+  --font-size-h2-mobile: 2rem;
   --bold: 700;
   --semibold: 600;
   --regular: 400;

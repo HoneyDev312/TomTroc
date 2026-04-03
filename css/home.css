@@ -118,3 +118,90 @@ section {
   color: var(--color-text-secondary);
   font-style: italic;
 }
+
+@media (max-width: 1023px) {
+  section {
+    padding: 0;
+  }
+
+  .discover-wrapper {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: var(--space-32);
+    padding-bottom: var(--space-48);
+  }
+
+  .discover-btn {
+    width: 100%;
+  }
+
+  .right-content > div {
+    width: 100%;
+  }
+
+  .img-wrapper > p {
+    margin-right: var(--space-12);
+  }
+
+  .books-wrapper {
+    padding: var(--space-48) var(--space-24);
+    text-align: center;
+  }
+
+  .card-wrapper {
+    margin: 0;
+    margin-top: var(--space-48);
+    padding: 0;
+  }
+
+  .books-btn {
+    display: none;
+  }
+
+  .help-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .help-btn {
+    width: 100%;
+  }
+
+  .rules-wrapper {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .rules-card {
+    width: 100%;
+    padding: 0 var(--space-32);
+  }
+
+  .values-wrapper {
+    width: 100%;
+    padding: var(--space-32) var(--space-16) var(--space-48);
+  }
+
+  .signature {
+    flex-direction: column;
+    gap: var(--space-48);
+  }
+
+  .signature > img {
+    align-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  .card-wrapper {
+    padding: 0 calc(2 * var(--space-40));
+  }
+  .rules-wrapper {
+    gap: 0 var(--space-16);
+  }
+}
+@media (min-width: 1280px) {
+  .card-wrapper {
+    padding: 0 calc(4 * var(--space-40));
+  }
+}

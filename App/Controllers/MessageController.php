@@ -7,7 +7,7 @@ namespace App\Controllers {
     use App\Models\Entities\Message;
     use App\Services\Utils;
 
-    class MessageController
+    class MessageController extends AbstractController
     {
         /**
          * Affiche la Messagerie.
@@ -15,9 +15,11 @@ namespace App\Controllers {
          */
         public function showMessaging(string $id, ?string $otherId = null): void
         {
+            $this->checkIfUserIsConnected();
+
             // On récupère l'id.
             $userId = (int) $id;
-            $otherUserId = $otherId !== null ? (int)$otherId : 0;
+            $otherUserId = $otherId !== null ? (int)$otherId : null;
 
 
             if ($userId <= 0) {
@@ -37,8 +39,18 @@ namespace App\Controllers {
                 $messages = $messageManager->getMessagesById($userId, $otherUserId);
             }
 
+            $pageMode = $otherUserId === null ? 'list' : 'thread';
+
             $view = new View("Messagerie", "messaging");
-            $view->render("messaging", ["conversations" => $conversations, "messages" => $messages, "otherId" => $otherUserId]);
+            $view->render(
+                "messaging",
+                [
+                    "conversations" => $conversations,
+                    "messages" => $messages,
+                    "otherId" => $otherUserId,
+                    "pageMode" => $pageMode,
+                ]
+            );
         }
 
         /**
@@ -47,6 +59,9 @@ namespace App\Controllers {
          */
         public function sendMessage(): void
         {
+
+            $this->checkIfUserIsConnected();
+
             // On récupère les données du formulaire POST.
             $senderId = (int) Utils::request("senderId");
             $receiverId = (int) Utils::request("receiverId");
@@ -75,7 +90,7 @@ namespace App\Controllers {
             }
 
             // On redirige vers la page mon compte.
-            Utils::redirect("messaging.show", ["id" => $senderId, "otherId" => $receiverId]);
+            Utils::redirect("messaging.thread", ["id" => $senderId, "otherId" => $receiverId]);
         }
     }
 }

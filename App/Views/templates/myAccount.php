@@ -1,6 +1,9 @@
 <div class="my-account-wrapper">
     <div class="my-account-content container">
-        <h1>Mon compte</h1>
+        <div class="my-account-header">
+            <h1>Mon compte</h1>
+            <a href="/edit-book" class="my-account-add-book btn btn-outlined">Ajouter un Livre</a>
+        </div>
         <div class="my-account-informations flex">
             <div class="my-account-informations-box flex left">
                 <div class="my-account-avatar flex">
@@ -35,7 +38,7 @@
                     <form class="my-account-informations-form-connect" action="/update-my-account" method="post">
 
                         <input type="text" name="id" id="id" value="<?= $user->getId() ?>" hidden>
-                        <label for=" email">Adresse email</label>
+                        <label for="email">Adresse email</label>
                         <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>">
                         <label for="password">Mot de passe</label>
                         <input type="hidden" name="old_password" id="old_password" value="<?= $user->getPassword() ?>" />
@@ -75,12 +78,12 @@
                                 <td><?= $book->getAuthor() ?></td>
                                 <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>
                                 <td>
-                                    <span class="my-account-books-table-image-tag 
+                                    <span class="my-account-tag 
                                 <?= $book->getAvailability() ? "available" : "unavailable" ?>">
                                         <?= $book->getAvailability() ? "disponible" : "non-dispo." ?>
                                     </span>
                                 </td>
-                                <td class="my-account-books-table-action">
+                                <td class="my-account-action">
                                     <a href="/edit-book/<?= (int) $book->getId() ?>">Éditer</a>
                                     <a class="delete" href="/delete-book/<?= (int)$book->getId() ?>/<?= (int)$user->getId() ?>">Supprimer</a>
                                 </td>
@@ -91,6 +94,34 @@
                 </tbody>
             </table>
 
+            <div class="my-account-list">
+                <?php if (empty($books)): ?>
+                    <div class="my-account-list-card">
+                        <p> Pas de livre enregistré pour le moment</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($books as $book): ?>
+                        <div class="my-account-list-card">
+                            <div class="my-account-list-card-header">
+                                <img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?>" alt="photo du livre" width="79" height="79">
+                                <div class="my-account-list-card-title">
+                                    <p><?= $book->getTitle() ?></p>
+                                    <p><?= $book->getAuthor() ?></p>
+                                    <span class="my-account-tag <?= $book->getAvailability() ? "available" : "unavailable" ?>">
+                                        <?= $book->getAvailability() ? "disponible" : "non-dispo." ?>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <p><?= $book->getTruncateDescription(90) ?></p>
+                            <div class="my-account-action">
+                                <a href="/edit-book/<?= (int) $book->getId() ?>">Éditer</a>
+                                <a class="delete" href="/delete-book/<?= (int)$book->getId() ?>/<?= (int)$user->getId() ?>">Supprimer</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif ?>
+            </div>
         </div>
     </div>
 </div>

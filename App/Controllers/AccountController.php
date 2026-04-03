@@ -8,7 +8,7 @@ namespace App\Controllers {
     use App\Models\Entities\User;
     use App\Models\Managers\BookManager;
 
-    class AccountController
+    class AccountController extends AbstractController
     {
         /**
          * Affiche la page mon compte.
@@ -16,6 +16,9 @@ namespace App\Controllers {
          */
         public function showMyAccount(string $id): void
         {
+
+            $this->checkIfUserIsConnected();
+
             // On récupère l'id.
             $userId = (int) $id;
 
@@ -162,6 +165,8 @@ namespace App\Controllers {
         public function updateMyAccount(): void
         {
 
+            $this->checkIfUserIsConnected();
+
             // On récupère les données du formulaire.
             $id = Utils::request("id");
             $email = Utils::request("email");
@@ -205,6 +210,8 @@ namespace App\Controllers {
          */
         public function updateMyAccountPicture(): void
         {
+
+            $this->checkIfUserIsConnected();
 
             // On récupère les données du formulaire.
             $id = Utils::request("id");

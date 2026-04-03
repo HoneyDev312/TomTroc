@@ -19,6 +19,10 @@ $route = $router->get('book/{id}', [BooksController::class, 'showBook'])->name('
 
 $route = $router->get('edit-book/{id}', [BooksController::class, 'showEditBook'])->name('edit-book.show');
 
+$route = $router->get('edit-book', [BooksController::class, 'showEditBook'])->name('add-book.show');
+
+$route = $router->post('add-book', [BooksController::class, 'addBook'])->name('book.add');
+
 $route = $router->post('update-book', [BooksController::class, 'updateBook'])->name('book.update');
 
 $route = $router->post('update-book-picture', [BooksController::class, 'updateBookPicture'])->name('book-picture.update');
@@ -27,9 +31,9 @@ $route = $router->get('search-book', [BooksController::class, 'searchBooks'])->n
 
 $route = $router->get('delete-book/{bookId}/{userId}', [BooksController::class, 'deleteBook'])->name('book.delete');
 
-$router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.index');
+$router->get('messaging/{id}', [MessageController::class, 'showMessaging'])->name('messaging.list');
 
-$route = $router->get('messaging/{id}/{otherId}', [MessageController::class, 'showMessaging'])->name('messaging.show');
+$route = $router->get('messaging/{id}/{otherId}', [MessageController::class, 'showMessaging'])->name('messaging.thread');
 
 $route = $router->post('send-message', [MessageController::class, 'sendMessage'])->name('messaging.send');
 

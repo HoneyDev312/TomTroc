@@ -61,7 +61,10 @@ namespace App\Models\Managers {
         public function getBookById(int $id): ?Book
         {
             $sql = "SELECT
-                    b.*, b.book_id AS id,u.username AS ownername
+                    b.*, 
+                    b.book_id AS id,
+                    u.username AS ownername,
+                    u.picture_uri AS ownerPictureUri
                     FROM book b
                     INNER JOIN user u ON u.user_id = b.owner_id
                     WHERE book_id = :id";
@@ -118,6 +121,24 @@ namespace App\Models\Managers {
             }
 
             return $books;
+        }
+
+        /**
+         * Ajoute un Book.
+         * @param Book $book : le book à modifier.
+         * @return void
+         */
+        public function addBook(Book $book): void
+        {
+            $sql = "INSERT INTO book (title, author, description, availability, owner_id ) VALUES (:title, :author,:description, :availability, :ownerId)";
+
+            $this->db->query($sql, [
+                'title' => $book->getTitle(),
+                'author' => $book->getAuthor(),
+                'description' => $book->getDescription(),
+                'availability' => $book->getAvailability(),
+                'ownerId' => $book->getOwnerId()
+            ]);
         }
 
         /**

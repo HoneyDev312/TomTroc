@@ -36,6 +36,7 @@ h2 {
   font-size: var(--font-size-16);
   font-weight: var(--semibold);
   padding: var(--space-16) var(--space-32);
+  text-align: center;
 }
 
 .btn-filled {
@@ -73,6 +74,7 @@ h2 {
   border-bottom-right-radius: var(--radius-12);
   padding-bottom: var(--space-24);
   position: relative;
+  z-index: 999;
 }
 
 .card-img {
@@ -121,12 +123,38 @@ h2 {
   background-color: var(--color-danger);
 }
 
-@media (min-width: 768px) {
-  /* tablette */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: var(--font-size-h1-mobile);
+    font-weight: var(--regular);
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .card {
+    width: 10rem;
+  }
+
+  .card-img {
+    height: 10rem;
+  }
+
+  .card-description {
+    text-align: left;
+  }
 }
-@media (min-width: 1024px) {
-  /* laptop */
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
 }
-@media (min-width: 1280px) {
-  /* desktop */
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
 }

@@ -1,38 +1,38 @@
-.my-account-wrapper {
+.public-account-wrapper {
   min-height: calc(100dvh - var(--header-h) - var(--footer-h));
   background-color: var(--color-bg-secondary);
 }
 
-.my-account-content {
+.public-account-content {
   padding: 0 calc(3 * var(--space-48));
   padding-top: calc(2 * var(--space-48));
 }
 
-.my-account-informations {
+.public-account-informations {
   height: 36.25rem;
   width: 100%;
   gap: var(--space-32);
   align-items: flex-start;
 }
 
-.my-account-informations-box {
+.public-account-informations-box {
   max-height: 100%;
   flex-direction: column;
   background-color: var(--color-bg-light);
   border-radius: var(--radius-20);
 }
 
-.my-account-informations-box.left {
+.public-account-informations-box.left {
   padding: var(--space-48) 0;
   flex: 1;
 }
 
-.my-account-informations-box.right {
+.public-account-informations-box.right {
   justify-content: center;
   flex: 3;
 }
 
-.my-account-avatar {
+.public-account-avatar {
   height: 8.3rem;
   width: 8.3rem;
   border-radius: var(--radius-pill);
@@ -40,14 +40,14 @@
   overflow: hidden;
 }
 
-.my-account-avatar > img {
+.public-account-avatar > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.my-account-informations-separator {
+.public-account-informations-separator {
   height: 0;
   width: 15rem;
   border-top-color: var(--color-border-tertiary);
@@ -56,30 +56,30 @@
   margin: var(--space-48) 0;
 }
 
-.my-account-informations-since {
+.public-account-informations-since {
   font-size: var(--font-size-14);
   color: var(--color-text-secondary);
 }
 
-.my-account-informations-subtitle {
+.public-account-informations-subtitle {
   font-size: var(--font-size-8);
   font-weight: var(--semibold);
   margin-top: var(--space-24);
   letter-spacing: 0.08em;
 }
 
-.my-account-informations-username {
+.public-account-informations-username {
   font-size: var(--font-size-24);
   font-family: var(--font-family-brand);
 }
 
-.my-account-informations-count {
+.public-account-informations-count {
   font-size: var(--font-size-14);
   gap: var(--space-8);
   margin-bottom: var(--space-40);
 }
 
-.my-account-books-table {
+.public-account-books-table {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate;
@@ -87,15 +87,15 @@
   background-color: var(--color-bg-secondary);
 }
 
-.my-account-books-table thead th:first-child {
+.public-account-books-table thead th:first-child {
   border-top-left-radius: var(--radius-20);
 }
 
-.my-account-books-table thead th:last-child {
+.public-account-books-table thead th:last-child {
   border-top-right-radius: var(--radius-20);
 }
 
-.my-account-books-table thead th {
+.public-account-books-table thead th {
   text-align: start;
   font-size: var(--font-size-8);
   letter-spacing: 0.08em;
@@ -105,41 +105,116 @@
   background-color: var(--color-bg-light);
 }
 
-.my-account-books-table tbody tr {
+.public-account-books-table tbody tr {
   font-size: var(--font-size-12);
 }
 
-.my-account-books-table tbody tr:last-child td {
+.public-account-books-table tbody tr:last-child td {
   font-size: var(--font-size-12);
   border-bottom: none;
 }
 
-.my-account-books-table tbody tr:nth-child(odd) {
+.public-account-books-table tbody tr:nth-child(odd) {
   background-color: var(--color-bg-light);
 }
 
-.my-account-books-table tbody tr:nth-child(even) {
+.public-account-books-table tbody tr:nth-child(even) {
   background-color: var(--color-bg-tertiary);
 }
 
-.my-account-books-table tbody td {
+.public-account-books-table tbody td {
   padding: var(--space-24) 0;
 }
 
-.my-account-books-table tbody tr:last-child td:last-child {
+.public-account-books-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: var(--radius-20);
 }
 
-.my-account-books-table tbody tr:last-child td:first-child {
+.public-account-books-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: var(--radius-20);
 }
 
-.my-account-books-table tbody td.my-account-books-table-image,
-th.my-account-books-table-image {
+.public-account-books-table tbody td.public-account-books-table-image,
+th.public-account-books-table-image {
   padding-left: calc(2 * var(--space-32));
 }
 
-.my-account-books-table tbody td.my-account-books-table-desc {
+.public-account-books-table tbody td.public-account-books-table-desc {
   padding-right: calc(2 * var(--space-32));
   font-style: italic;
+}
+
+@media (max-width: 1023px) {
+  .public-account-content {
+    padding: var(--space-48) var(--space-16);
+    padding-bottom: var(--space-48);
+    overflow: auto;
+  }
+
+  .public-account-informations {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .public-account-informations-box.left {
+    width: 100%;
+    flex: 1;
+  }
+
+  .public-account-informations-box.right {
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .public-account-books-table {
+    display: none;
+  }
+
+  .public-account-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    background-color: var(--color-bg-secondary);
+  }
+
+  .public-account-list-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-20);
+    border-color: var(--color-border-tertiary);
+    border-width: 1px;
+    border-style: solid;
+    padding: var(--space-56);
+    font-size: var(--font-size-14);
+    gap: var(--space-32);
+  }
+
+  .public-account-list-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-16);
+  }
+
+  .public-account-list-card-title {
+    flex: 1;
+  }
+
+  .public-account-list-card-title.public-account-tag {
+    margin-top: var(--space-16);
+  }
+
+  .public-account-action {
+    display: flex;
+    padding-right: 0;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1024px) {
+  .public-account-content {
+    padding: 0 var(--space-48);
+    padding-top: var(--space-48);
+  }
 }

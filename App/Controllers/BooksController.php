@@ -7,7 +7,7 @@ namespace App\Controllers {
     use App\Models\Managers\BookManager;
     use App\Services\Utils;
 
-    class BooksController
+    class BooksController extends AbstractController
     {
         /**
          * Affiche la page d'accueil.
@@ -28,6 +28,9 @@ namespace App\Controllers {
          */
         public function showOurBooks(): void
         {
+
+            $this->checkIfUserIsConnected();
+
             $bookManager = new BookManager();
             $books = $bookManager->getAllBooks();
 
@@ -57,6 +60,8 @@ namespace App\Controllers {
          */
         public function showBook(string $id): void
         {
+            $this->checkIfUserIsConnected();
+
             $bookId = (int) $id;
 
             if ($bookId <= 0) {
@@ -78,15 +83,59 @@ namespace App\Controllers {
          * Affiche la page du formulaire de mise à jour d'un livre.
          * @return void
          */
-        public function showEditBook(string $id): void
+        public function showEditBook(?string $id = null): void
         {
-            $bookId = $id;
+            $this->checkIfUserIsConnected();
 
+            $bookId = $id !== null ? (int)$id : null;
+
+            if ($bookId === null) {
+                $view = new View("Ajouter un livre", "editBook");
+                $view->render("editBook");
+            } else {
+                $bookManager = new BookManager();
+                $book = $bookManager->getBookById($bookId);
+
+                $view = new View("Modifier un livre", "editBook");
+                $view->render("editBook", ['book' => $book]);
+            }
+        }
+
+        /**
+         * Ajouter un livre. 
+         * @return void
+         */
+        public function addBook(): void
+        {
+            $this->checkIfUserIsConnected();
+
+            // On récupère les données du formulaire POST.
+            $title = Utils::request("title");
+            $author = Utils::request("author");
+            $description = Utils::request("description");
+            $availability = Utils::request("availability");
+            $userId = Utils::request("userId");
+            var_dump($userId);
+            // On vérifie que les données sont valides.
+            if (empty($title) || empty($author) || empty($description) || $availability === "") {
+                throw new \Exception("Tous les champs sont obligatoires.");
+            }
+
+            // On crée l'objet Book.
+            $book = new Book([
+                'title' => $title,
+                'author' => $author,
+                'description' => $description,
+                'availability' => (int) $availability,
+                'ownerId' => (int) $userId,
+            ]);
+
+            // On met à jour le livre.
             $bookManager = new BookManager();
-            $book = $bookManager->getBookById($bookId);
+            $bookManager->addBook($book);
 
-            $view = new View("Modifier un livre", "editBook");
-            $view->render("editBook", ['book' => $book]);
+            // On redirige vers la page mon compte.
+            Utils::redirect("my-account.show", ["id" => (int) $userId]);
         }
 
         /**
@@ -95,6 +144,7 @@ namespace App\Controllers {
          */
         public function updateBook(): void
         {
+            $this->checkIfUserIsConnected();
 
             // On récupère les données du formulaire POST.
             $id = Utils::request("id");
@@ -132,6 +182,8 @@ namespace App\Controllers {
          */
         public function updateBookPicture(): void
         {
+
+            $this->checkIfUserIsConnected();
 
             // On récupère les données du formulaire.
             $id = Utils::request("id");
@@ -181,6 +233,9 @@ namespace App\Controllers {
          */
         public function deleteBook(string $book_id, string $user_id): void
         {
+
+            $this->checkIfUserIsConnected();
+
             // On récupère les params dans l'url GET.
             $bookId = (int) $book_id;
             $userId = (int) $user_id;
