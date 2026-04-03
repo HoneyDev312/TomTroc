@@ -18,6 +18,7 @@
 
 @media (max-width: 1023px) {
   .footer-wrapper {
+    position: relative;
     flex-direction: column;
     justify-content: center;
     height: var(--footer-h-mobile);

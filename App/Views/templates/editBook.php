@@ -1,5 +1,6 @@
 <div class="update-book-wrapper">
     <div class="update-book-content container">
+        <button type="button" onclick="history.back()"><img src="<?= BOOK_IMAGE_BASE_URL_SVG . "arrow-left.svg" ?>" alt="" width="16" height="16"> retour</button>
         <h1>Modifier les informations</h1>
         <div class="update-book-informations flex">
 

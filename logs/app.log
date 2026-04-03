@@ -1385,4 +1385,202 @@
 #0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
 #1 {main}[2026-04-02 14:44:50] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
 #0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:19:43] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:19:47] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:22:41] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:23:18] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:23:31] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:24:09] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:24:52] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:25:33] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:25:40] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:26:25] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:26:38] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:27:27] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:28:43] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:29:51] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:30:27] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:30:48] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:31:06] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:32:13] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:32:33] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:32:42] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:34:37] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:35:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:35:56] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:36:19] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:36:37] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:36:44] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:37:16] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:38:04] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:38:48] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:39:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:40:31] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:41:21] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:42:00] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:42:36] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:43:09] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:43:13] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:45:38] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:46:29] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:46:59] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:53:51] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:54:18] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:55:23] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:57:41] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:58:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:58:56] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:59:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 15:59:47] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 16:00:20] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 16:00:59] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:36:47] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:36:48] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:37:08] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:37:15] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:37:35] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:38:49] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:39:03] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:51:02] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:53:58] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:54:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:54:19] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:55:11] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:55:22] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:55:51] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:56:13] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:56:16] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:56:34] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:56:43] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:06] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:12] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:25] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:29] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:31] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:31] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:57:35] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:58:01] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:58:10] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:58:16] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:58:27] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 17:59:50] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:01:22] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:02:05] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:03:10] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:04:17] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:06:09] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:06:32] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:07:51] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:08:15] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:08:57] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:11:10] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:13:29] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:14:29] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-02 18:15:02] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:41:26] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:11] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:18] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:47] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:50] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:54] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
+#1 {main}[2026-04-03 05:42:58] La page demandée n'existe pas. in /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/App/Core/Router.php:141
+#0 /Users/michaelpeltier/Desktop/OpenClassrooms/PROJET_4/TomTroc/index.php(22): App\Core\Router->dispatch('GET', '/.well-known/ap...')
 #1 {main}
