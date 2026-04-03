@@ -179,8 +179,17 @@ section {
   }
 
   .values-wrapper {
-    padding: var(--space-32) var(--space-16)
-      calc(var(--space-48) + var(--footer-h-mobile));
+    width: 100%;
+    padding: var(--space-32) var(--space-16) var(--space-48);
+  }
+
+  .signature {
+    flex-direction: column;
+    gap: var(--space-48);
+  }
+
+  .signature > img {
+    align-self: center;
   }
 }
 @media (min-width: 1024px) {

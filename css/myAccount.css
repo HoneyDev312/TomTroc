@@ -264,7 +264,7 @@ tbody tr:last-child td:first-child {
   .my-account-content {
     flex-direction: column;
     padding: 0 var(--space-16);
-    padding-bottom: calc(var(--footer-h-mobile) + var(--header-mobile-h));
+    padding-bottom: var(--space-48);
     overflow: auto;
   }
 

@@ -13,6 +13,10 @@
   padding-left: calc(2 * var(--space-48));
 }
 
+.form-wrapper > h1 {
+  margin-bottom: var(--space-24);
+}
+
 .form-connect {
   width: 20rem;
   display: flex;
@@ -73,7 +77,7 @@
   .connect-content {
     flex-direction: column;
     overflow-y: scroll;
-    padding-bottom: var(--footer-h-mobile);
+    padding-bottom: var(--space-24);
   }
 
   .form-wrapper {

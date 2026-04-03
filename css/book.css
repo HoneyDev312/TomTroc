@@ -95,11 +95,12 @@
 
   .book-content {
     flex-direction: column;
-    padding-bottom: calc(var(--space-40) + var(--footer-h-mobile));
+    padding-bottom: var(--space-40);
   }
 
   .book-informations {
     margin-top: var(--space-40);
+    padding: 0 var(--space-16);
   }
 
   .book-informations > .btn {

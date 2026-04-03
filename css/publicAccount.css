@@ -147,7 +147,7 @@ th.public-account-books-table-image {
 @media (max-width: 1023px) {
   .public-account-content {
     padding: var(--space-48) var(--space-16);
-    padding-bottom: calc(var(--footer-h-mobile) + var(--header-mobile-h));
+    padding-bottom: var(--space-48);
     overflow: auto;
   }
 
