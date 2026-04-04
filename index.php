@@ -7,6 +7,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 require_once 'config/config.php';
+require_once 'config/db_config.php';
 require_once 'config/autoloader.php';
 
 use App\Core\Router;
