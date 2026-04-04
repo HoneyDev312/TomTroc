@@ -6,6 +6,7 @@ const thread = document.querySelector(".messaging-thread-content");
 const messagingForm = document.querySelector(".messaging-thread-form");
 
 //Upload user and book picture
+
 if (input && form) {
   input.addEventListener("change", () => {
     if (input.files && input.files.length > 0) {
@@ -31,6 +32,7 @@ function scrollToBottom() {
 }
 
 // Scroll en bas de la conversation après l'envoir d'un message
+
 window.addEventListener("load", scrollToBottom);
 
 messagingForm?.addEventListener("submit", () => {
@@ -38,6 +40,7 @@ messagingForm?.addEventListener("submit", () => {
 });
 
 // toggle du burger menu en mobile
+
 const toggle = document.querySelector(".nav-toggle-menu");
 const mobileMenu = document.querySelector(".nav-mobile-menu");
 

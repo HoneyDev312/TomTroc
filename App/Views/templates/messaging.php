@@ -36,7 +36,7 @@ if ($hasMessages) {
                         <div class="messaging-list-body">
                             <div class="messaging-list-header">
                                 <span class="messaging-list-sender">
-                                    <?= $conversation->getOtherUsername() ?>
+                                    <?= htmlspecialchars($conversation->getOtherUsername()) ?>
                                 </span>
                                 <span class="messaging-list-time">
                                     <?= $conversation->getCreatedAtHourMinute() ?>
@@ -84,7 +84,7 @@ if ($hasMessages) {
                                 <?php endif ?>
                                 <span><?= $message->getCreatedAtDayMonthHourMinute() ?></span>
                             </div>
-                            <p class="messaging-text messaging-<?= $message->getSenderId() === $_SESSION["userId"] ? "user" : "other" ?>-text"><?= $message->getContent() ?></p>
+                            <p class="messaging-text messaging-<?= $message->getSenderId() === $_SESSION["userId"] ? "user" : "other" ?>-text"><?= htmlspecialchars($message->getContent()) ?></p>
                         </div>
                     <?php endforeach ?>
                 </div>

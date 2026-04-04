@@ -33,7 +33,7 @@ namespace App\Views {
             // On s'occupe de la vue envoyée
             $viewPath = $this->buildViewPath($viewName);
 
-            // Les deux variables ci-dessous sont utilisées dans le "main.php" qui est le template principal.
+            // Les trois variables ci-dessous sont utilisées dans le "main.php" qui est le template principal.
             $content = $this->renderViewFromTemplate($viewPath, $params);
             $title = $this->title;
             $templateCss = $this->templateCss;

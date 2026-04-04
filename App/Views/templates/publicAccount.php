@@ -10,10 +10,10 @@ $redirect = isset($_SESSION['userId'])
             <div class="public-account-informations-box flex left">
                 <div class="public-account-avatar">
                     <img
-                        src="<?= BOOK_IMAGE_BASE_URL_USERS . $user->getPictureUri() ?>" alt="" />
+                        src="<?= BOOK_IMAGE_BASE_URL_USERS . htmlspecialchars($user->getPictureUri()) ?>" alt="" />
                 </div>
                 <div class="public-account-informations-separator"></div>
-                <p class="public-account-informations-username"><?= $user->getUsername() ?></p>
+                <p class="public-account-informations-username"><?= htmlspecialchars($user->getUsername()) ?></p>
                 <p class="public-account-informations-since">Membre depuis le <?= $user->getCreatedAt()->format('d/m/Y') ?></p>
                 <p class="public-account-informations-subtitle">BIBLIOTHÈQUE</p>
                 <span class="public-account-informations-count flex"><img

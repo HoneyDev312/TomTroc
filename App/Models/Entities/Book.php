@@ -55,6 +55,10 @@ namespace App\Models\Entities {
             return $this->description;
         }
 
+        /**
+         * Getter pour le description raccourci.
+         * @return int $max: le nombre de charactères max
+         */
         public function getTruncateDescription(int $max = 120): string
         {
             if (mb_strlen($this->description) <= $max) {
@@ -146,7 +150,7 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le createdAt.
-         * @param \DateTimeImmutable $createdAt
+         * @param string|\DateTimeImmutable $createdAt
          */
         public function setCreatedAt(string|\DateTimeImmutable $createdAt): void
         {
@@ -170,6 +174,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le ownername.
          * @param string $ownername
+         * @return void
          */
         public function setOwnername(string $ownername): void
         {
@@ -187,7 +192,8 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le ownerPictureUri.
-         * @param string $ownerPictureUri
+         * @param ?string $ownerPictureUri
+         * @return void
          */
         public function setOwnerPictureUri(?string $ownerPictureUri): void
         {

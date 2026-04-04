@@ -30,11 +30,11 @@ $hasBook = isset($book);
                     <input type="text" name="id" id="id" value="<?= $hasBook ? $book->getId() : "" ?>" hidden>
                     <input type="text" name="userId" id="userId" value="<?= $hasBook ? $book->getOwnerId() : $_SESSION["userId"] ?>" hidden>
                     <label for="title">Titre</label>
-                    <input type="text" name="title" id="title" value="<?= $hasBook ? $book->getTitle() : "" ?>">
+                    <input type="text" name="title" id="title" value="<?= $hasBook ? htmlspecialchars($book->getTitle()) : "" ?>">
                     <label for="author">Auteur</label>
-                    <input type="text" name="author" id="author" value="<?= $hasBook ? $book->getAuthor() : "" ?>">
+                    <input type="text" name="author" id="author" value="<?= $hasBook ? htmlspecialchars($book->getAuthor()) : "" ?>">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" required><?= $hasBook ? $book->getDescription() : "" ?></textarea>
+                    <textarea name="description" id="description" required><?= $hasBook ? htmlspecialchars($book->getDescription()) : "" ?></textarea>
                     <label for="availability">Disponibilité</label>
                     <select name="availability" id="availability">
                         <option value="1" <?= $hasBook && $book->getAvailability() == 1 ? 'selected' : '' ?>>Disponible</option>

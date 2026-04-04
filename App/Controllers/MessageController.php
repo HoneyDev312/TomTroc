@@ -11,6 +11,8 @@ namespace App\Controllers {
     {
         /**
          * Affiche la Messagerie.
+         * @param string $id
+         * @param ?string $otherId default null
          * @return void
          */
         public function showMessaging(string $id, ?string $otherId = null): void
@@ -21,7 +23,7 @@ namespace App\Controllers {
             $userId = (int) $id;
             $otherUserId = $otherId !== null ? (int)$otherId : null;
 
-
+            // On vérifie que l'id du user est valide.
             if ($userId <= 0) {
                 throw new \RuntimeException('ID user invalide');
             }
@@ -39,8 +41,10 @@ namespace App\Controllers {
                 $messages = $messageManager->getMessagesById($userId, $otherUserId);
             }
 
+            // Gestion du rendu desktop ou mobile
             $pageMode = $otherUserId === null ? 'list' : 'thread';
 
+            //On redirige vers la messagerie.
             $view = new View("Messagerie", "messaging");
             $view->render(
                 "messaging",
@@ -54,7 +58,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Envoyer la Messagerie.
+         * Envoyer un message.
          * @return void
          */
         public function sendMessage(): void
@@ -66,7 +70,7 @@ namespace App\Controllers {
             $senderId = (int) Utils::request("senderId");
             $receiverId = (int) Utils::request("receiverId");
             $content = Utils::request("content");
-            var_dump($senderId, $receiverId, $content);
+
             // On vérifie que les données sont valides.
             if (empty($senderId) || empty($receiverId) || empty($content)) {
                 throw new \Exception("Tous les champs sont obligatoires.");
@@ -89,7 +93,7 @@ namespace App\Controllers {
                 throw new \Exception("Une erreur est survenue lors l'enregistrement de votre message");
             }
 
-            // On redirige vers la page mon compte.
+            // On redirige vers la messagerie.
             Utils::redirect("messaging.thread", ["id" => $senderId, "otherId" => $receiverId]);
         }
     }

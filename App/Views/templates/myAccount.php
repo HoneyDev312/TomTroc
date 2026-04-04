@@ -23,7 +23,7 @@
 
                 <div class="my-account-informations-separator"></div>
 
-                <p class="my-account-informations-username"><?= $user->getUsername() ?></p>
+                <p class="my-account-informations-username"><?= htmlspecialchars($user->getUsername()) ?></p>
                 <p class="my-account-informations-since">Membre depuis le <?= $user->getCreatedAt()->format('d/m/Y') ?></p>
                 <p class="my-account-informations-subtitle">BIBLIOTHÈQUE</p>
                 <span class="my-account-informations-count flex"><img
@@ -39,12 +39,12 @@
 
                         <input type="text" name="id" id="id" value="<?= $user->getId() ?>" hidden>
                         <label for="email">Adresse email</label>
-                        <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>">
+                        <input type="email" name="email" id="email" value="<?= htmlspecialchars($user->getEmail()) ?>">
                         <label for="password">Mot de passe</label>
                         <input type="hidden" name="old_password" id="old_password" value="<?= $user->getPassword() ?>" />
                         <input type="password" name="password" id="password" placeholder="••••••••">
                         <label for="username">Pseudo</label>
-                        <input type="text" name="username" id="username" value="<?= $user->getUsername() ?>" required>
+                        <input type="text" name="username" id="username" value="<?= htmlspecialchars($user->getUsername()) ?>" required>
                         <button class="submit btn btn-outlined">Enregistrer</button>
                     </form>
                 </div>
@@ -73,7 +73,7 @@
                     <?php else: ?>
                         <?php foreach ($books as $book): ?>
                             <tr>
-                                <td class="my-account-books-table-image"><img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . $book->getPictureUri() ?>" alt="photo du livre" width="64" height="64"></td>
+                                <td class="my-account-books-table-image"><img src="<?= BOOK_IMAGE_BASE_URL_BOOKS . htmlspecialchars($book->getPictureUri()) ?>" alt="photo du livre" width="64" height="64"></td>
                                 <td><?= $book->getTitle() ?></td>
                                 <td><?= $book->getAuthor() ?></td>
                                 <td class="my-account-books-table-desc"><?= $book->getTruncateDescription(90) ?></td>

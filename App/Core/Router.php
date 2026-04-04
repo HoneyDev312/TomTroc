@@ -13,21 +13,22 @@ namespace App\Core;
 final class Router
 {
     /**
-     * Liste des routes "vivantes" de l'application.
+     * Liste des routes de l'application.
      * Exemple d'entrée: Route(GET, "book/{id}", [BooksController::class, "showBook"])
      */
     private array $routes = [];
 
     /**
      * Index des routes nommées.
-     * But: générer des URLs par nom (ex: "my-account.show") via pathFor().
+     * But: générer des URLs par nom (ex: "my-account.show") grâce à la methode pathFor().
      *
-     * static car pathFor() est statique (Utils::redirect peut l'appeler sans instance).
+     * pathFor() utilisé de manière statique (Utils::redirect peut l'appeler sans instance).
      */
     private static array $namedRoutes = [];
 
     /**
      * Déclare une route GET.
+     * @return Route
      */
     public function get(string $path, array $handler): Route
     {
@@ -38,6 +39,7 @@ final class Router
 
     /**
      * Déclare une route POST.
+     * @return Route
      */
     public function post(string $path, array $handler): Route
     {
@@ -48,7 +50,8 @@ final class Router
 
     /**
      * Ajoute la route dans la collection principale.
-     * Si elle est déjà nommée, on la met aussi dans l'index des routes nommées.
+     * Si déjà nommée, on la met aussi dans l'index des routes nommées.
+     * @return void
      */
     private function addRoute(Route $route): void
     {
@@ -57,7 +60,8 @@ final class Router
 
     /**
      * Enregistre explicitement une route nommée.
-     * Utile car ->name() est appelé après get()/post() dans ton usage.
+     * Utile car ->name() est appelé après get()/post().
+     * @return void
      */
     private function registerNamedRoute(Route $route): void
     {
@@ -74,6 +78,7 @@ final class Router
      * - teste la regex contre l'URL courante
      * - retourne les paramètres extraits sous forme ['id' => '18']
      * - retourne false si pas de match
+     * @return array|false
      */
     private function matchRoute(string $routePath, string $currentPath): array|false
     {
@@ -93,6 +98,7 @@ final class Router
      * - route nommée "my-account.show" => path "my-account/{id}"
      * - params ['id' => 7]
      * - résultat "my-account/7"
+     * @return string
      */
     public static function pathFor(string $name, array $params = []): string
     {

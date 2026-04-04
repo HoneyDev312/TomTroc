@@ -85,7 +85,8 @@ namespace App\Models\Managers {
 
         /**
          * Modifie la photo du User.
-         * @param User $user : le user à modifier.
+         * @param string $id: $id du user.
+         * @param string $fileName: nom du fichier.
          * @return void
          */
         public function updateMyAccountPicture(string $id, string $fileName): void

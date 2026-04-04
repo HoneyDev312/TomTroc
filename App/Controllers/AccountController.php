@@ -45,6 +45,7 @@ namespace App\Controllers {
             // On récupère l'id.
             $userId = (int) $id;
 
+            // On vérifie que l'id est valides.
             if ($userId <= 0) {
                 throw new \RuntimeException('ID livre invalide');
             }
@@ -55,6 +56,7 @@ namespace App\Controllers {
             $bookManager = new BookManager();
             $books = $bookManager->getAllBookByOwnerId($userId);
 
+            // On redirige vers la page compte public.
             $view = new View("Compte de {$user->getUsername()}", "publicAccount");
             $view->render("publicAccount", ["user" => $user, "books" => $books]);
         }
@@ -70,7 +72,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit du formulaire de connexion de l'utilisateur.
+         * Soumission du  formulaire de connexion de l'utilisateur.
          * @return void
          */
         public function connectUser(): void
@@ -116,7 +118,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit du formulaire d'inscription d'un utilisateur.
+         * Soumission du formulaire d'inscription d'un utilisateur.
          * @return void
          */
         public function addUser(): void
@@ -159,7 +161,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit du formulaire de mise à jour d'un User. 
+         * Soumission du formulaire de mise à jour d'un User. 
          * @return void
          */
         public function updateMyAccount(): void
@@ -205,7 +207,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit du formulaire de mise à jour d'une photo de User. 
+         * Soumission du formulaire de mise à jour d'une photo de User. 
          * @return void
          */
         public function updateMyAccountPicture(): void
@@ -239,7 +241,7 @@ namespace App\Controllers {
                 }
             }
 
-            //On met à jour la piucture dand le dossier assets/users.
+            //On met à jour la picture dand le dossier assets/users.
             $uploadDir = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_USERS;
             if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true)) {
                 throw new \Exception("Impossible de créer le dossier upload.");

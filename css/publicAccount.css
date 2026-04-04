@@ -217,4 +217,8 @@ th.public-account-books-table-image {
     padding: 0 var(--space-48);
     padding-top: var(--space-48);
   }
+
+  .public-account-list {
+    display: none;
+  }
 }

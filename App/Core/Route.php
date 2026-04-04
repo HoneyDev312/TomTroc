@@ -55,6 +55,7 @@ final class Route
 
     /**
      * Retourne la méthode HTTP de la route.
+     * @return string
      */
     public function getMethod(): string
     {
@@ -63,6 +64,7 @@ final class Route
 
     /**
      * Retourne le chemin de la route.
+     * @return string
      */
     public function getPath(): string
     {
@@ -71,6 +73,7 @@ final class Route
 
     /**
      * Retourne le handler [Controller::class, 'method'].
+     * @return array
      */
     public function getHandler(): array
     {
@@ -81,6 +84,7 @@ final class Route
      * Associe un nom à cette route (ex: "books.show").
      * Si un callback d'enregistrement existe, on le déclenche
      * pour que le Router indexe immédiatement cette route nommée.
+     * @return self
      */
     public function name(string $name): self
     {
@@ -95,6 +99,7 @@ final class Route
 
     /**
      * Retourne le nom de la route (ou null si non défini).
+     * @return ?string
      */
     public function getName(): ?string
     {

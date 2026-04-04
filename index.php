@@ -19,6 +19,8 @@ $router = new Router();
 
 // Charge la déclaration des routes
 require_once 'public/routes.php';
+
+
 try {
     $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 } catch (\RuntimeException $e) {

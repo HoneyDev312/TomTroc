@@ -8,6 +8,7 @@ namespace App\Controllers {
     {
         /**
          * Vérifie que l'utilisateur est connecté.
+         * Si pas connecté redirige sur la page de connexion.
          * @return void
          */
         protected function checkIfUserIsConnected(): void

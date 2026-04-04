@@ -40,6 +40,7 @@ namespace App\Controllers {
 
         public function searchBooks(): void
         {
+            // On récupère les données du formulaire GET.
             $titleTrimmed = trim((string) Utils::request('title', ''));
 
             $bookManager = new BookManager();
@@ -56,6 +57,7 @@ namespace App\Controllers {
 
         /**
          * Affiche la page d'un livre.
+         * @param string $id
          * @return void
          */
         public function showBook(string $id): void
@@ -64,6 +66,7 @@ namespace App\Controllers {
 
             $bookId = (int) $id;
 
+            // On vérifie que l'id est valide.
             if ($bookId <= 0) {
                 throw new \RuntimeException("Le livre demandé n'existe pas");
             }
@@ -81,6 +84,7 @@ namespace App\Controllers {
 
         /**
          * Affiche la page du formulaire de mise à jour d'un livre.
+         * @param ?string $id
          * @return void
          */
         public function showEditBook(?string $id = null): void
@@ -89,9 +93,12 @@ namespace App\Controllers {
 
             $bookId = $id !== null ? (int)$id : null;
 
+            // Si id est null on redirige sur le formulaire d'ajoute de livre.
             if ($bookId === null) {
                 $view = new View("Ajouter un livre", "editBook");
                 $view->render("editBook");
+
+                // Sinon on redirige sur le formulaire de mis à jour de livre.
             } else {
                 $bookManager = new BookManager();
                 $book = $bookManager->getBookById($bookId);
@@ -115,7 +122,7 @@ namespace App\Controllers {
             $description = Utils::request("description");
             $availability = Utils::request("availability");
             $userId = Utils::request("userId");
-            var_dump($userId);
+
             // On vérifie que les données sont valides.
             if (empty($title) || empty($author) || empty($description) || $availability === "") {
                 throw new \Exception("Tous les champs sont obligatoires.");
@@ -130,7 +137,7 @@ namespace App\Controllers {
                 'ownerId' => (int) $userId,
             ]);
 
-            // On met à jour le livre.
+            // On ajoute le livre.
             $bookManager = new BookManager();
             $bookManager->addBook($book);
 
@@ -139,7 +146,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit de mis à jour d'un livre. 
+         * Soumission de mise à jour d'un livre. 
          * @return void
          */
         public function updateBook(): void
@@ -177,7 +184,7 @@ namespace App\Controllers {
         }
 
         /**
-         * Submit du formulaire de mise à jour d'une photo d'un Livre. 
+         * Soumission du formulaire de mise à jour d'une photo d'un Livre. 
          * @return void
          */
         public function updateBookPicture(): void
@@ -204,6 +211,8 @@ namespace App\Controllers {
             $old = $user->getPictureUri();
             $bookManager->updateBookPicture($id, $fileName);
 
+
+            //On met à jour la picture du livre dans le fichier assets/books.
             if (!empty($old)) {
                 $oldPath = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_BOOKS . $old;
                 if (is_file($oldPath) && $old !== $fileName) {
@@ -211,7 +220,6 @@ namespace App\Controllers {
                 }
             }
 
-            //On met à jour la picture dand le dossier assets/users.
             $uploadDir = dirname(__DIR__, 2) . BOOK_IMAGE_BASE_URL_BOOKS;
             if (!is_dir($uploadDir) && !mkdir($uploadDir, 0775, true)) {
                 throw new \Exception("Impossible de créer le dossier upload.");
@@ -229,6 +237,8 @@ namespace App\Controllers {
 
         /**
          * Suppression d'un livre.
+         * @param string $book_id
+         * @param string $user_id
          * @return void
          */
         public function deleteBook(string $book_id, string $user_id): void
@@ -240,11 +250,12 @@ namespace App\Controllers {
             $bookId = (int) $book_id;
             $userId = (int) $user_id;
 
+            // On vérifie que l'id du livre est valide.
             if ($bookId <= 0) {
                 throw new \RuntimeException('Id de livre invalide');
             }
 
-            // On supprime le book.
+            // On supprime le livre.
             $bookManager = new BookManager();
             $bookManager->deleteBook($bookId);
 

@@ -6,7 +6,7 @@ declare(strict_types=1);
 // quand PHP rencontre une classe non encore chargée.
 spl_autoload_register(function (string $class): void {
     // Namespace racine de l'application
-    $prefix = 'App\\';
+    $prefix = "App\\";
 
     // Dossier de base correspondant au namespace App\
     $baseDir = __DIR__ . '/../App/';

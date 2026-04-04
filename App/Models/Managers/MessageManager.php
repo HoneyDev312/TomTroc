@@ -11,6 +11,12 @@ namespace App\Models\Managers {
     class MessageManager extends AbstractEntityManager
     {
 
+        /**
+         * Récupère tout les messages entre 2 id.
+         * @param int $id : id du user
+         * @param int $otherId: id de l'autre user de la conversation
+         * @return array : un tableau de messsages.
+         */
         public function getMessagesById(int $id, int $otherId): array
         {
             $sql = "SELECT
@@ -43,9 +49,9 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère le dernier message conversation par id.
+         * Récupère les conversations par id.
          * @param int : un id de user
-         * @return array : un objet Message ou null.
+         * @return array : tableau de onversations.
          */
         public function getConversationsById(int $id): array
         {
@@ -86,7 +92,7 @@ namespace App\Models\Managers {
         /**
          * Ajoute un message.
          * @param Message $message : le message à ajouter.
-         * @return void
+         * @return ?int
          */
         public function sendMessage(Message $message): ?int
         {

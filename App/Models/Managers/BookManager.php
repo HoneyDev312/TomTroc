@@ -11,7 +11,7 @@ namespace App\Models\Managers {
     class BookManager extends AbstractEntityManager
     {
         /**
-         * Récupère tous les books.
+         * Récupère tous les livres.
          * @return array : un tableau d'objets Book.
          */
         public function getAllBooks(): array
@@ -32,8 +32,8 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère tous les 4 derniers books.
-         * @return array : un tableau d'objets de Book.
+         * Récupère tous les 4 derniers Livres.
+         * @return array : un tableau de 4 objets de Book.
          */
         public function getLastFourBooks(): array
         {
@@ -54,7 +54,7 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Récupère un book par son id.
+         * Récupère un livre par son id.
          * @param int : un id de livre book_id
          * @return ?Book : un objets Book ou null.
          */
@@ -124,8 +124,8 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Ajoute un Book.
-         * @param Book $book : le book à modifier.
+         * Ajoute un livre.
+         * @param Book $book : le book à ajouter.
          * @return void
          */
         public function addBook(Book $book): void
@@ -142,7 +142,7 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Modifie un Book.
+         * Modifie un livre.
          * @param Book $book : le book à modifier.
          * @return void
          */
@@ -159,8 +159,9 @@ namespace App\Models\Managers {
         }
 
         /**
-         * Modifie la photo du Book.
-         * @param Book $book : le livre à modifier.
+         * Modifie la photo du livre.
+         * @param string $id : id du livre.
+         * @param string $fileName : nom du fichier.
          * @return void
          */
         public function updateBookPicture(string $id, string $fileName): void
@@ -174,7 +175,7 @@ namespace App\Models\Managers {
 
 
         /**
-         * Supprime un book.
+         * Supprime un livre.
          * @param int $id : l'id du book à supprimer.
          * @return void
          */

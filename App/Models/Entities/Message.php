@@ -38,6 +38,8 @@ namespace App\Models\Entities {
 
         /**
          * Retourne les N premiers mots du contenu + "..." si coupé.
+         * @param int $wordLimit default = 4
+         * @return string
          */
         public function getContentExcerpt(int $wordLimit = 4): string
         {
@@ -56,7 +58,8 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le senderId.
-         * @param int $email
+         * @param int $senderId
+         * @return void
          */
         public function setSenderId(string $senderId): void
         {
@@ -75,6 +78,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le receiverId.
          * @param int $receiverId
+         * @return void
          */
         public function setReceiverId(string $receiverId): void
         {
@@ -93,6 +97,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le createdAt.
          * @param string|\DateTimeImmutable $createdAt
+         * @return void
          */
         public function setCreatedAt(string|\DateTimeImmutable $createdAt): void
         {
@@ -106,7 +111,7 @@ namespace App\Models\Entities {
 
         /**
          * Getter pour le createdAt.
-         * @return string|\DateTimeImmutable
+         * @return \DateTimeImmutable
          */
         public function getCreatedAt(): \DateTimeImmutable
         {
@@ -131,8 +136,9 @@ namespace App\Models\Entities {
         }
 
         /**
-         * Setter pour le otherId.
-         * @param ?string $otherId
+         * Setter pour le otherUserId.
+         * @param ?string $otherUserId
+         * @return void
          */
         public function setOtherUserId(?string $otherUserId): void
         {
@@ -151,6 +157,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le otherUsername.
          * @param ?string $otherUsername
+         * @return void
          */
         public function setOtherUsername(?string $otherUsername): void
         {
@@ -159,7 +166,7 @@ namespace App\Models\Entities {
 
         /**
          * Getter pour le otherUsername.
-         * @return string
+         * @return ?string
          */
         public function getOtherUsername(): ?string
         {
@@ -168,7 +175,8 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le otherPictureUri.
-         * @param string $otherPictureUri
+         * @param ?string $otherPictureUri
+         * @return void
          */
         public function setOtherPictureUri(?string $otherPictureUri): void
         {

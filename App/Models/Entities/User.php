@@ -19,6 +19,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le username.
          * @param string $username
+         * @return void
          */
         public function setUsername(string $username): void
         {
@@ -37,6 +38,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le email.
          * @param string $email
+         * @return void
          */
         public function setEmail(string $email): void
         {
@@ -55,6 +57,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le password.
          * @param string $password
+         * @return void
          */
         public function setPassword(string $password): void
         {
@@ -72,7 +75,7 @@ namespace App\Models\Entities {
 
         /**
          * Setter pour le pictureUri.
-         * @param string $pictureUri
+         * @param ?string $pictureUri
          */
         public function setPictureUri(?string $pictureUri): void
         {
@@ -81,7 +84,8 @@ namespace App\Models\Entities {
 
         /**
          * Getter affichage (retire le timestamp initial).
-         * 20260320090000_esther.jpg -> esther.jpg
+         * 20260320090000_filename.jpg -> filename.jpg
+         * @return ?string
          */
         public function getPictureUri(): ?string
         {
@@ -95,6 +99,7 @@ namespace App\Models\Entities {
         /**
          * Setter pour le createdAt.
          * @param string|\DateTimeImmutable $createdAt
+         * @return void
          */
         public function setCreatedAt(string|\DateTimeImmutable $createdAt): void
         {
